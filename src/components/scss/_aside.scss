@@ -1,16 +1,23 @@
 @import "./variables";
 aside {
-    background-color: white;
+    
     height: 100%;
+    
+}
+.top{
     .logo{
         display: flex;
         gap: 0.8rem;
         align-items: center;
-        padding: 0.6rem;
+       margin-top: 1.4rem;
         color:$color-primary;
         .logo__icon{
             font-size: 2rem;
         }
+    }
+    .close{
+        display: none;
+        
     }
 }
 nav{
@@ -45,4 +52,10 @@ nav{
 
         }
     }
+    a:last-child{
+        position: absolute;
+        bottom: 2rem;
+        width: 100%;
+    }
+
 }
