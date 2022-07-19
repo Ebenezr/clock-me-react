@@ -1,0 +1,91 @@
+@import "./variables";
+// aside section style
+@import "./aside";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  ul{
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+  }
+  body{
+    font-family: sans-serif;
+    
+  }
+  #root{
+    height: 100vh;
+    width: 100vw;
+    background: $color-background;
+    overflow-x: hidden;
+    user-select: none;
+
+  }
+  main{
+    height: 100%;
+    width: 97%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 14rem auto 23rem;
+    gap:1.8rem;
+
+  }
+  img{
+    display: block;
+    width: 100%;
+  }
+  .profile-photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+
+  }
+//font sizes
+  h1{
+    font-size: 1.8rem;
+  }
+  h2{
+    font-size: 1.4rem;
+  }
+  h4{
+    font-size: 0.8rem;
+  }
+  h5{
+    font-size: 0.77rem;
+  }
+  small{
+    font-size: 0.75rem;
+  }
+
+
+
+  //text colors
+.text-muted{
+    color: $color-info-dark;
+}
+p{
+  color: $color-dark-variant;
+}
+b{
+  color: $color-dark;
+}
+.primary{
+  color:$color-primary;
+}
+.danger{
+  color:$color-danger;
+}
+.succes{
+  color:$color-success;
+}
+.warning{
+  color: $color-warning;
+}
+
+
