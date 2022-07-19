@@ -2,4 +2,47 @@
 aside {
     background-color: white;
     height: 100%;
+    .logo{
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+        padding: 0.6rem;
+        color:$color-primary;
+        .logo__icon{
+            font-size: 2rem;
+        }
+    }
+}
+nav{
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+    position: relative;
+    top:3rem;
+    
+    a{
+        display: flex;
+        color:$color-info-dark;
+        margin-left: 2rem;
+        gap:1rem;
+        align-items: center;
+        position: relative;
+        height: 3.7rem;
+        transition:  all 300ms ease;
+        &:hover{
+            margin-left: 1rem;
+        }
+    }
+    a.active{
+        background: $color-light;
+        color: $color-primary;
+        margin-left: 0;
+        &:before{
+            content: "";
+            width: 6px;
+            height: 100%;
+            background: $color-primary;
+
+        }
+    }
 }

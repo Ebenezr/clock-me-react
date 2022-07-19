@@ -1,20 +1,23 @@
 import React from 'react'
 import { MdSpaceDashboard,MdAdminPanelSettings,MdAnalytics, MdOutlineAccessTimeFilled } from "react-icons/md";
-
+import { IoTimer } from "react-icons/io5";
 function Aside() {
   return (
     <aside>
-        <div className="logo"></div>
+        <div className="logo">
+        <IoTimer className='logo__icon'/>
+        <h2>Clock-Me</h2>
+        </div>
         <nav className='side-bar'>
         <ul>
             <li>
                 <a href="/">
                     <MdSpaceDashboard />
-                    <h2>Dashboard</h2>
+                    <h3>Dashboard</h3>
                 </a>
             </li>
             <li>
-            <a href="/">
+            <a href="/" className='active'>
                 <MdAdminPanelSettings />
                 <h3>Admin</h3>
             </a>
