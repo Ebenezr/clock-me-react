@@ -1,0 +1,44 @@
+@import "./variables";
+
+header{
+    display: flex;
+    justify-content: end;
+    gap:2rem;
+    margin-top: 1.4rem;
+    button{
+        display: none;
+
+    }
+    .theme-toggler{
+        background: $color-light;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 1.6rem;
+        width: 4.2rem;
+        cursor: pointer;
+        border-radius: $border-radius-1;
+        span{
+            font-size: 1.2rem;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .active{
+            background: $color-primary;
+            color: white;
+            border-radius: $border-radius-1;
+
+        }
+
+
+    }
+    .profile{
+        display: flex;
+        gap:2rem;
+        text-align: right;
+
+    }
+}
