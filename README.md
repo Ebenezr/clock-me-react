@@ -14,6 +14,7 @@ Clock-me: is is a web application used to keep track of employees and thier cloc
 
 ## SCREENSHOTS
 
+![image](./src/components/images/screen.png)
 
 ## Table of content
 
@@ -25,7 +26,6 @@ Clock-me: is is a web application used to keep track of employees and thier cloc
 - [Licence](#licence)
 - [Copyright](#copyright)
 
-
 ---
 
 ## Technologies
@@ -35,15 +35,11 @@ languages used are:
 1. React
 2. Sass
 
-
-
-
 ---
 
 ### Features
 
 As a user you ase able to:
-
 
 ---
 
@@ -56,8 +52,6 @@ the application solve this such as recoding each day's clock-in and clock-out ti
 ---
 
 ### challenges
-
-
 
 ---
 
@@ -83,7 +77,6 @@ clone the repo using the command
 ---
 
 ## How to use the project
-
 
 ---
 
