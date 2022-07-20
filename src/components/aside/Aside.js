@@ -3,6 +3,7 @@ import { MdSpaceDashboard,MdAdminPanelSettings,MdAnalytics, MdOutlineAccessTimeF
 import { IoTimer } from "react-icons/io5";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import { BsMoonFill } from "react-icons/bs";
+import profile from "../images/ebe.png"
 
 const  Aside=()=> {
   return (
@@ -55,7 +56,7 @@ const  Aside=()=> {
         <footer> 
              <div className='profile'>
              <div className='profile-photo'>
-                     <img src="../images/ebe.png"/>
+                     <img src={profile}/>
                  </div>
              <div className='info'>
                  <p>Hey, <b>Ebenezar</b></p>
