@@ -19,7 +19,7 @@ const Header=()=> {
 
             </div>
             <div className='profile-photo'>
-                <img scr="#" />
+            <img src="../images/ebe.png"/>
             </div>
         </div>
     

@@ -2,6 +2,9 @@
 aside {
     
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
     
 }
 .top{
@@ -9,7 +12,8 @@ aside {
         display: flex;
         gap: 0.8rem;
         align-items: center;
-       margin-top: 1.4rem;
+        padding-top: 1.4rem;
+        padding-left: 1rem;
         color:$color-primary;
         .logo__icon{
             font-size: 2rem;
@@ -56,6 +60,25 @@ nav{
         position: absolute;
         bottom: 2rem;
         width: 100%;
+    }
+    footer{
+        position: absolute;
+        bottom: 2rem;
+        width: 100%;
+        display: flex;
+        padding-left: 1rem;
+        
+        .profile{
+            display: flex;
+            text-align: left;
+            justify-content: center;
+            gap:0.8rem;
+            align-items: center;
+        }
+        img{
+            background-color: $color-info-dark;
+            height: 100%;
+        }
     }
 
 }

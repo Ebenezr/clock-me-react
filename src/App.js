@@ -1,7 +1,7 @@
 import React from 'react';
 import Aside from './components/aside/Aside';
 import Main from './components/main/Main';
-import Info from './components/main/Info';
+
 
 import './components/scss/style.scss';
 
@@ -10,8 +10,7 @@ function App() {
     <main className="App">
     
     <Aside />
-    <Main />
-    <Info />
+    <Main /> 
     </main>
   );
 }
