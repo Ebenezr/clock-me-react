@@ -15,7 +15,9 @@ function Aside() {
                 <MdOutlineClose />
             </div>
         </div>
-        <nav className='side-bar'>
+      
+        <fieldset className='side-bar' title='manage'>
+            <legend>MANAGE</legend>
             <a href="/">
                 <MdSpaceDashboard />
                 <h3>Dashboard</h3>
@@ -40,25 +42,31 @@ function Aside() {
             <RiLogoutCircleLine />
                 <h3>Logout</h3>
             </a> */}
-            <footer>
+        </fieldset>
+        <fieldset class="preference" title="preference">
+            <legend>PREFRENCES</legend>
+            <div className='content-wrapper'>
+                <h3>Theme</h3>
+                <div className='theme-toggler'>
+                    <span className="active"><MdWbSunny /></span>
+                    <span><BsMoonFill /></span>
+                </div>
+                </div>
+            </fieldset>
+        <footer>
              
-                <div className='profile'>
-                <div className='profile-photo'>
-                        <img src="../images/ebe.png"/>
-                    </div>
-                <div className='info'>
-                    <p>Hey, <b>Ebenezar</b></p>
-                    <small className='text-muted'>Admin</small>
-                </div>
-                  
-                </div>
+             <div className='profile'>
+             <div className='profile-photo'>
+                     <img src="../images/ebe.png"/>
+                 </div>
+             <div className='info'>
+                 <p>Hey, <b>Ebenezar</b></p>
+                 <small className='text-muted'>Admin</small>
+             </div>
+               
+             </div>
 
-            </footer>
-
-
-
-
-        </nav>
+         </footer>
 
     </aside>
   )
