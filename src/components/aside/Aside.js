@@ -3,7 +3,8 @@ import { MdSpaceDashboard,MdAdminPanelSettings,MdAnalytics, MdOutlineAccessTimeF
 import { IoTimer } from "react-icons/io5";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import { BsMoonFill } from "react-icons/bs";
-function Aside() {
+
+const  Aside=()=> {
   return (
     <aside>
         <div className='top'>
@@ -38,10 +39,7 @@ function Aside() {
             <MdOutlineAccessTimeFilled />
                 <h3>Timecard</h3>
             </a>
-            {/* <a href="/">
-            <RiLogoutCircleLine />
-                <h3>Logout</h3>
-            </a> */}
+
         </fieldset>
         <fieldset class="preference" title="preference">
             <legend>PREFRENCES</legend>
@@ -53,8 +51,8 @@ function Aside() {
                 </div>
                 </div>
             </fieldset>
-        <footer>
-             
+
+        <footer> 
              <div className='profile'>
              <div className='profile-photo'>
                      <img src="../images/ebe.png"/>
@@ -62,12 +60,9 @@ function Aside() {
              <div className='info'>
                  <p>Hey, <b>Ebenezar</b></p>
                  <small className='text-muted'>Admin</small>
+             </div>    
              </div>
-               
-             </div>
-
          </footer>
-
     </aside>
   )
 }
