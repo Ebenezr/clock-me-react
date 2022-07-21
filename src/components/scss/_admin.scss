@@ -1,0 +1,9 @@
+@import "./variables";
+
+.admin__view{
+    background: rgb(149, 55, 55);
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}

@@ -1,0 +1,9 @@
+@import "./variables";
+
+.dash__view{
+    background: rgb(97, 79, 79);
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}

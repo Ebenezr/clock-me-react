@@ -38,7 +38,7 @@ aside {
     top:2rem;
     
     
-    a{
+    .nav__link{
         display: flex;
         color:$color-info-dark;
         margin-left: 2rem;
@@ -51,7 +51,7 @@ aside {
             margin-left: 1rem;
         }
     }
-    a.active{
+    .active__link{
         background: $color-light;
         color: $color-primary;
         margin-left: 0;
@@ -106,9 +106,9 @@ aside {
 
             }
     }}
-    footer{
+    .aside__footer{
         position: absolute;
-        bottom: 2rem;
+        bottom: 2.5rem;
         width: 100%;
         display: flex;
         padding-left: 1rem;

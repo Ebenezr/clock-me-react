@@ -1,10 +1,12 @@
 import React from 'react';
+import {BrowserRouter as Router, NavLink, Routes, Route} from "react-router-dom"
 import { MdSpaceDashboard,MdAdminPanelSettings,MdAnalytics, MdOutlineAccessTimeFilled, MdOutlineClose, MdMenu,MdWbSunny,IoMoonSharp } from "react-icons/md";
 import { IoTimer } from "react-icons/io5";
 import { BsMoonFill } from "react-icons/bs";
 import profile from "../images/ebe.png"
 
 const  Aside=()=> {
+
   return (
     <aside>
         <div className='top'>
@@ -19,26 +21,27 @@ const  Aside=()=> {
       
         <fieldset className='side-bar' title='manage'>
             <legend>MANAGE</legend>
-            <a href="/">
+            
+            <NavLink className="nav__link" activeClassName="active__link" to="/">
                 <MdSpaceDashboard />
                 <h3>Dashboard</h3>
-            </a>
-            
-            <a href="/" className='active'>
+            </NavLink>
+                   
+            <NavLink className="nav__link" activeClassName="active__link" to="/">
                 <MdAdminPanelSettings />
                 <h3>Admin</h3>
-            </a>
+            </NavLink>
         
-            <a href="/">
+            <NavLink className="nav__link" activeClassName="active__link" to="/">
                 <MdAnalytics />
                 <h3>Analytics</h3>
-            </a>
+            </NavLink>
     
-   
-            <a href="/">
+            <NavLink className="nav__link" activeClassName="active__link" to="/">
             <MdOutlineAccessTimeFilled />
                 <h3>Timecard</h3>
-            </a>
+            </NavLink>
+            
 
         </fieldset>
         <fieldset class="preference" title="preference">
@@ -52,7 +55,7 @@ const  Aside=()=> {
                 </div>
             </fieldset>
 
-        <footer> 
+        <div className='aside__footer'> 
              <div className='profile'>
              <div className='profile-photo'>
                      <img src={profile}/>
@@ -62,7 +65,7 @@ const  Aside=()=> {
                  <small className='text-muted'>Admin</small>
              </div>    
              </div>
-         </footer>
+         </div>
     </aside>
   )
 }

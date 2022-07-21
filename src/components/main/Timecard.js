@@ -2,7 +2,7 @@ import React from 'react'
 
 function Timecard() {
   return (
-    <div>Timecard</div>
+    <div className='timecard__view'>Timecard</div>
   )
 }
 

@@ -10,6 +10,14 @@
  
 //login
 @import "./login";
+
+//views
+@import './dashboard';
+@import './admin';
+@import './timecard';
+@import './analytics';
+
+
 *{
     padding: 0;
     margin: 0;

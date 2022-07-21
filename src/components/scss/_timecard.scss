@@ -1,0 +1,9 @@
+@import "./variables";
+
+.timecard__view{
+    background: rgb(39, 151, 63);
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}

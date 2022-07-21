@@ -1,0 +1,9 @@
+@import "./variables";
+
+.analytics__view{
+    background: rgb(47, 31, 188);
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}

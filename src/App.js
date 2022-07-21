@@ -12,7 +12,7 @@ import Analytics from './components/main/Analytics';
 
 import './components/scss/style.scss';
 
-function App() {
+const App=()=> {
   return (
     <main className='App'>
       <Aside />
