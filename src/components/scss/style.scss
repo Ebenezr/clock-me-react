@@ -3,6 +3,8 @@
 @import "./aside";
 //header
 @import "./header";
+//footer
+@import "./footer";
 //main view
 @import "./main";
  
@@ -38,7 +40,7 @@
   }
   main{
     height: 100%;
-    width: 97%;
+    width: 98%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 14rem auto;

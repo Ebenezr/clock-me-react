@@ -1,8 +1,11 @@
 import React from 'react'
 
-function Footer() {
+const Footer=()=> {
   return (
-    <div>Footer</div>
+    <footer>
+        <h4>Copyright 2022-2023 <a>BlindInc</a>. All rights reserved.</h4>
+        <h4>Version 1.0.0</h4>
+    </footer>
   )
 }
 

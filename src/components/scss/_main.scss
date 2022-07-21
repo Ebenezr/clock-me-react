@@ -2,4 +2,9 @@
 .container__main{
     background-color: $color-info-dark;
     height: 100%;
+    display: grid;
+    grid-template-rows: 7% auto 7%;
+  }
+  .view__main{
+    background: steelblue;
   }

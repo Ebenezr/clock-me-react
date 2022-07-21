@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { MdMenu } from "react-icons/md";
 
 
-function Header() {
+const Header=()=> {
   return (
     <header>
         <button> <MdMenu/> </button>
