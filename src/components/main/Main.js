@@ -1,11 +1,13 @@
 import React from 'react'
+import Header from './Header'
 
 
 const Main=()=> {
   return (
-    <div>
+    <section className='container__main'>
+    <Header />
     
-    </div>
+    </section>
   )
 }
 

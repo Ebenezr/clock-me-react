@@ -3,6 +3,8 @@
 @import "./aside";
 //header
 @import "./header";
+//main view
+@import "./main";
  
 //login
 @import "./login";
@@ -39,9 +41,9 @@
     width: 97%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 14rem auto 23rem;
-    gap:1.8rem;
+    grid-template-columns: 14rem auto;
     overflow: hidden;
+   
 
 
  }

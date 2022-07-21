@@ -1,2 +1,24 @@
 @import "./variables";
 
+header{
+    background: white;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    color:$color-info-dark;
+    span{
+        display: flex;
+        gap:0.5rem;
+        cursor: pointer;
+
+    }
+    button{
+        background: transparent;
+        border:none;
+        cursor: pointer;
+        
+    }
+}
