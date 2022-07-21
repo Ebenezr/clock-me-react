@@ -14,21 +14,22 @@ import './components/scss/style.scss';
 
 function App() {
   return (
-    <Router>
-      <Aside />
-      <Routes>
-          <Route path="login" element={<Login />}/>
-          <Route path="about" element={<About />}/>
-          <Route path="home" element={<Main />}>
-              <Route path="dashboard" element={<Dashboard />}/>
-              <Route path="admin" element={<Admin />}/>
-              <Route path="analytics" element={<Analytics />}/>
-              <Route path="timecard" element={<Timecard />}/>
-          </Route>
-      </Routes>
+    <Login />
+  //   <main className='App'>
+  //     <Login />
+  //     <Routes>
+  //         <Route path="login" element={<Login />}/>
+  //         <Route path="about" element={<About />}/>
+  //         <Route path="home" element={<Main />}>
+  //             <Route path="dashboard" element={<Dashboard />}/>
+  //             <Route path="admin" element={<Admin />}/>
+  //             <Route path="analytics" element={<Analytics />}/>
+  //             <Route path="timecard" element={<Timecard />}/>
+  //         </Route>
+  //     </Routes>
 
 
-    </Router>
+  //   </main> 
   );
 }
 

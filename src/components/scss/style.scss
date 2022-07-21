@@ -3,7 +3,9 @@
 @import "./aside";
 //header
 @import "./header";
-
+ 
+//login
+@import "./login";
 *{
     padding: 0;
     margin: 0;
@@ -20,12 +22,19 @@
     font-family: sans-serif;
     height: 100vh;
     width: 100vw;
-    background: $color-background;
-    overflow-x: hidden;
-    user-select: none;
+   
     
   }
   #root{
+    height: 100%;
+    width: 100%;
+    background: $color-background;
+    overflow-x: hidden;
+    user-select: none;
+   
+
+  }
+  main{
     height: 100%;
     width: 97%;
     margin: 0 auto;
@@ -33,13 +42,9 @@
     grid-template-columns: 14rem auto 23rem;
     gap:1.8rem;
     overflow: hidden;
-    
-
-  }
-  // main{
 
 
-  // }
+ }
   img{
     display: block;
     width: 100%;
