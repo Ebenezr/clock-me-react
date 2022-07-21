@@ -22,22 +22,22 @@ const  Aside=()=> {
         <fieldset className='side-bar' title='manage'>
             <legend>MANAGE</legend>
             
-            <NavLink className="nav__link" activeClassName="active__link" to="/">
+            <NavLink className="nav__link" activeClassName="active" to="/dashboard">
                 <MdSpaceDashboard />
                 <h3>Dashboard</h3>
             </NavLink>
                    
-            <NavLink className="nav__link" activeClassName="active__link" to="/">
+            <NavLink className="nav__link" activeClassName="active" to="/admin">
                 <MdAdminPanelSettings />
                 <h3>Admin</h3>
             </NavLink>
         
-            <NavLink className="nav__link" activeClassName="active__link" to="/">
+            <NavLink className="nav__link" activeClassName="active" to="/analytics">
                 <MdAnalytics />
                 <h3>Analytics</h3>
             </NavLink>
     
-            <NavLink className="nav__link" activeClassName="active__link" to="/">
+            <NavLink className="nav__link" activeClassName="active" to="/timecard">
             <MdOutlineAccessTimeFilled />
                 <h3>Timecard</h3>
             </NavLink>

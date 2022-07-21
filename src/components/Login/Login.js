@@ -12,8 +12,9 @@ function Login() {
             <input className='inputs' type="text" placeholder='admin@gmail.com'/>
           </label>
           <label>Password
-            <input className='inputs' type="password" placeholder='***'/>
+            <input className='inputs' type="password" placeholder='******'/>
           </label>
+          <input type="text" className='error' disabled />
           <div className='nav'>
           <span>
             <input type="checkbox"/>

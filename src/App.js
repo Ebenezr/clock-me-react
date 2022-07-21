@@ -14,15 +14,7 @@ import './components/scss/style.scss';
 
 const App=()=> {
   return (
-    <main className='App'>
-      <Aside />
-      <Main />
-      
-
-
-
-
-    </main>
+ <Login />
   );
 }
 

@@ -12,8 +12,18 @@ const Main=()=> {
     <section className='container__main'>
     <Header />
     <div className="view__main">
-      <Timecard /> 
-     {/* <Route path="dashboard" element={<Dashboard />}/> */}
+     <Routes>
+       <Route exact path="/dashboard" element={<Dashboard />}/> 
+     </Routes>
+     <Routes>
+       <Route exact path="/admin" element={<Admin />}/> 
+     </Routes>
+     <Routes>
+       <Route exact path="analytics" element={<Analytics />}/> 
+     </Routes>
+     <Routes>
+       <Route exact path="timecard" element={<Timecard />}/> 
+     </Routes>
     </div>
     <Footer />
     </section>
