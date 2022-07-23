@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Link, Routes, Route} from "react-router-dom"
+import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom"
 import Aside from './components/aside/Aside';
 import Main from './components/main/Main';
 import About from './components/about/About';
@@ -12,9 +12,9 @@ import Analytics from './components/main/Analytics';
 
 import './components/scss/style.scss';
 
-const App=()=> {
+const App = () => {
   return (
- <Login />
+    <Login />
   );
 }
 
