@@ -12,12 +12,7 @@ import Analytics from "./components/main/Analytics";
 import "./components/scss/style.scss";
 
 const App = () => {
-  return (
-    <main className="App">
-      <Aside />
-      <Main />
-    </main>
-  );
+  return <Login />;
 };
 
 export default App;

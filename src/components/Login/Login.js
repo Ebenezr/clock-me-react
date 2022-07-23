@@ -1,7 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
+import axios from "../../api/axios";
 import { MdCheckBox } from "react-icons/md";
+import AuthContext from "../../context-API/AuthProvider";
 
 function Login() {
+  const baseURL = "http://localhost:8004/users";
+  const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
   //hold user data
@@ -11,7 +15,7 @@ function Login() {
     rememberMe: true,
   });
   const [errMsg, setErrMsg] = useState("");
-  const [succes, setSucces] = useState(false);
+  const [succes, setSuccess] = useState(false);
 
   useEffect(() => {
     userRef.current.focus();
@@ -33,8 +37,41 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrMsg("Login Succes");
-    setSucces(true);
+    try {
+      const response = await axios.post(
+        baseURL,
+        JSON.stringify({
+          username: formData.username,
+          password: formData.password,
+        }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
+      );
+      const accessToken = response?.data?.accessToken;
+      const roles = response?.data?.roles;
+      setAuth({
+        usernmame: formData.username,
+        password: formData.password,
+        roles,
+        accessToken,
+      });
+      formData.username("");
+      formData.password("");
+      setSuccess(true);
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("No Server Response");
+      } else if (err.response?.status === 400) {
+        setErrMsg("Missing Username or Password");
+      } else if (err.response?.status === 401) {
+        setErrMsg("Unauthorized");
+      } else {
+        setErrMsg("Login Failed");
+      }
+      errRef.current.focus();
+    }
   };
 
   return (
