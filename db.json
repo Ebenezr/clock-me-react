@@ -4,18 +4,22 @@
       "id": 1,
       "username": "ebbe",
       "password": "show!",
-      "admin": true
+      "admin": true,
+      "staffid":"SD-978",
+      "department":"System Design",
+      "avatar":"",
+      "timestamp":[]
     },
     {
       "id": 2,
       "username": "mimo",
       "password": "1234",
-      "admin": false
-    },
-    {
-      "username": "ebe",
-      "password": "show!",
-      "id": 3
+      "staffid":"IT-234",
+      "department":"It",
+      "avatar":"",
+      "admin": false,
+      "timestamp":[]
     }
+   
   ]
 }
