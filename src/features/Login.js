@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import axios from "../../api/axios";
+import axios from "../api/axios";
 import { MdCheckBox } from "react-icons/md";
-import AuthContext from "../../context-API/AuthProvider";
+import AuthContext from "../context-API/AuthProvider";
 
 function Login() {
   const baseURL = "http://localhost:8004/users";

@@ -1,13 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
-import Aside from "./components/aside/Aside";
-import Main from "./components/main/Main";
-import About from "./components/about/About";
-import Login from "./components/Login/Login";
-import Dashboard from "./components/main/Dashboard";
-import Timecard from "./components/main/Timecard";
-import Admin from "./components/main/Admin";
-import Analytics from "./components/main/Analytics";
+import Aside from "./components/nav/Aside";
+import Main from "./features/Main";
+import Login from "./features/Login";
+import Dashboard from "./features/Dashboard";
+import Timecard from "./features/Timecard";
+import Admin from "./features/Admin";
+import Analytics from "./features/Analytics";
 
 import "./components/scss/style.scss";
 
