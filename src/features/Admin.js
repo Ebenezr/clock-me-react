@@ -1,6 +1,16 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  NavLink,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
+
 import { BiSearchAlt } from "react-icons/bi";
 import profile from "../components/assets/images/ebe.png";
+import AddNew from "../components/forms/AddNew";
+import Update from "../components/forms/Update";
 
 const Admin = () => {
   return (
@@ -59,8 +69,15 @@ const Admin = () => {
           </span>
         </div>
         <div className="right-manage">
-          <button className="btn-update">Update Info</button>
-          <button className="btn-new">Add New?</button>
+          <NavLink className="btn-new btn" activeClassName="active" to="update">
+            Update Info
+          </NavLink>
+          <NavLink className="btn-new btn" activeClassName="active" to="addnew">
+            Add New?
+          </NavLink>
+        </div>
+        <div className="forms-container">
+          <Outlet />
         </div>
       </div>
     </section>

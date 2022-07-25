@@ -7,6 +7,8 @@ import Admin from "./Admin";
 import Analytics from "./Analytics";
 import Timecard from "./Timecard";
 import axios from "../api/axios";
+import AddNew from "../components/forms/AddNew";
+import Update from "../components/forms/Update";
 
 const Main = () => {
   const [users, setUsers] = useState([]);
@@ -25,7 +27,10 @@ const Main = () => {
           <Route exact path="/dashboard" element={<Dashboard />} />
         </Routes>
         <Routes>
-          <Route exact path="/admin" element={<Admin />} />
+          <Route exact path="/admin" element={<Admin />}>
+            <Route exact path="Addnew" element={<AddNew />} />
+            <Route exact path="update" element={<Update />} />
+          </Route>
         </Routes>
         <Routes>
           <Route exact path="analytics" element={<Analytics />} />
