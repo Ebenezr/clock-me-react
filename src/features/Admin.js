@@ -69,10 +69,10 @@ const Admin = () => {
           </span>
         </div>
         <div className="right-manage">
-          <NavLink className="btn-new btn" activeClassName="active" to="update">
+          <NavLink className="btn-new btn" activeclassname="active" to="update">
             Update Info
           </NavLink>
-          <NavLink className="btn-new btn" activeClassName="active" to="addnew">
+          <NavLink className="btn-new btn" activeclassname="active" to="addnew">
             Add New?
           </NavLink>
         </div>

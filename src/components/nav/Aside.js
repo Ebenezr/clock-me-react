@@ -35,27 +35,27 @@ const Aside = () => {
       <fieldset className="side-bar" title="manage">
         <legend>MANAGE</legend>
 
-        <NavLink className="nav__link" activeClassName="active" to="/dashboard">
+        <NavLink className="nav__link" activeclassname="active" to="/dashboard">
           <MdSpaceDashboard />
           <h3>Dashboard</h3>
         </NavLink>
 
-        <NavLink className="nav__link" activeClassName="active" to="/admin">
+        <NavLink className="nav__link" activeclassname="active" to="/admin">
           <MdAdminPanelSettings />
           <h3>Admin</h3>
         </NavLink>
 
-        <NavLink className="nav__link" activeClassName="active" to="/analytics">
+        <NavLink className="nav__link" activeclassname="active" to="/analytics">
           <MdAnalytics />
           <h3>Analytics</h3>
         </NavLink>
 
-        <NavLink className="nav__link" activeClassName="active" to="/timecard">
+        <NavLink className="nav__link" activeclassname="active" to="/timecard">
           <MdOutlineAccessTimeFilled />
           <h3>Timecard</h3>
         </NavLink>
       </fieldset>
-      <fieldset class="preference" title="preference">
+      <fieldset className="preference" title="preference">
         <legend>PREFRENCES</legend>
         <div className="content-wrapper">
           <h3>Theme</h3>
