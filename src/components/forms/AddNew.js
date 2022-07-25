@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 
-function AddNew() {
+function AddNew({ postData }) {
   //hold user data
   const [formData, setFormData] = useState({
     name: "",
@@ -15,10 +15,31 @@ function AddNew() {
   const errRef = useRef();
   const [errMsg, setErrMsg] = useState("");
   const [succes, setSuccess] = useState(false);
+
+  //function to generate staffid
+  function staffIdGen() {
+    //get first letter
+    // const firstLetters = str
+    //   .split(" ")
+    //   .map((word) => word[0])
+    //   .join("")
+    //   .toUpperCase();
+
+    const number = Math.floor(1000 + Math.random() * 9000);
+    return `CM-${number}`;
+  }
   //set focus
   useEffect(() => {
     userRef.current.focus();
   }, []);
+  //set focus
+  useEffect(() => {
+    getStaffid();
+  }, [formData.department]);
+
+  const getStaffid = () => {
+    setFormData({ ...formData, staffid: staffIdGen() });
+  };
   //hangle change event
   const handleChange = (event) => {
     const key = event.target.id;
@@ -32,6 +53,7 @@ function AddNew() {
   //handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
+    postData(formData);
     console.log(formData);
   };
   return (
@@ -54,7 +76,7 @@ function AddNew() {
           id="avatar"
           type="text"
           className="inputs"
-          value={formData.avater}
+          value={formData.avatar}
           onChange={handleChange}
           placeholder="https://avater.png"
         />
@@ -66,17 +88,6 @@ function AddNew() {
           type="text"
           className="inputs"
           value={formData.password}
-          onChange={handleChange}
-          placeholder="******"
-        />
-      </label>
-      <label>
-        Cornfirm Password
-        <input
-          id="cpassword"
-          type="text"
-          className="inputs"
-          value={formData.cpassword}
           onChange={handleChange}
           placeholder="******"
         />
@@ -98,8 +109,9 @@ function AddNew() {
         Staff-ID
         <input
           id="staffid"
-          type="text"
+          readOnly
           disabled
+          type="text"
           className="inputs"
           value={formData.staffid}
           placeholder="SD-8456"

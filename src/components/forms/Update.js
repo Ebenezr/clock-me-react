@@ -66,17 +66,6 @@ const Update = () => {
         />
       </label>
       <label>
-        Cornfirm Password
-        <input
-          id="cpassword"
-          type="text"
-          className="inputs"
-          value={formData.cpassword}
-          onChange={handleChange}
-          placeholder="******"
-        />
-      </label>
-      <label>
         Department
         <select
           id="department"

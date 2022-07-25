@@ -77,7 +77,7 @@ const Aside = () => {
           </div>
           <div className="info">
             <p>
-              Hey, <b>Ebenezar</b>
+              <b>Ebenezar</b>
             </p>
             <small className="text-muted">Admin</small>
           </div>
