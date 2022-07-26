@@ -70,16 +70,19 @@
                  padding: 0.5rem 1rem;
                  border-radius: $border-radius-3;
                  font-weight: 700;
+                 &:hover{
+                    transform: scale(1.1);
+                 }
              }
-             .btn-new{
+             .btn-in{
                  background: transparent;
                  border: 2px solid $color-primary;
                  color: $color-info-dark;
                 
              }
-             .active{
+             .btn-out{
                  border-radius: $border-radius-3;
-                 
+                 border: none;
                  background: $color-primary;
                  color: $color-info-light;
  
@@ -95,39 +98,6 @@
              width: 80%;
              justify-content: center;
              align-items: center;
-             .addnew{
-                 display: flex;
-                 flex-direction: column;
-                 gap:0.2rem;
-                 padding: 0.4rem;
-                 label{
-                     color: $color-dark;
-                     font-weight: 500;
-                 }
-                 .inputs{
-                     width: 100%;
-                     padding: 0.4rem;
-                     background: transparent;
-                     border: 1px solid $color-info-dark;
-                     border-radius: $border-radius-1;
-                     outline: none;
-                 }
-                 .checkbox{
-                     display: flex;
-                     align-items: center;
-                     padding: 0.4rem;
-                     gap: 0.5rem;
-                 }
-                 .btn-submit{
-                     background: $color-primary;
-                     border: none;
-                     padding: 0.5rem;
-                     font-weight: 600;
-                     letter-spacing: 0.2rem;
-                     border-radius: $border-radius-3;
-                     color: white;
-                 }
-             }
          }
  
      }

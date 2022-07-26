@@ -31,14 +31,13 @@ const Timecard = ({ employees, currentuser, setCurrentUser }) => {
       <article className="right">
         <Userinfo currentuser={currentuser} />
         <div className="right-manage">
-          <button className="btn-new btn" activeclassname="active" to="update">
-            Clock-In
-          </button>
-          <button className="btn-new btn" activeclassname="active" to="addnew">
-            Clock-Out
-          </button>
+          <button className="btn-out btn">Clock-In</button>
+          <button className="btn-in btn">Clock-Out</button>
         </div>
-        <div className="forms-container"></div>
+        <div className="forms-container">
+          My Timestamps
+          <div className="timestamp-container"></div>
+        </div>
       </article>
     </section>
   );
