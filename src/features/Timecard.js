@@ -11,6 +11,8 @@ const Timecard = ({ employees, currentuser, setCurrentUser }) => {
     });
     setCurrentUser(user);
   };
+  //console.log(currentuser);
+  currentuser.map((time) => console.log(time.timestamp));
   return (
     <section className="timecard__view">
       <article className="left">
@@ -35,8 +37,12 @@ const Timecard = ({ employees, currentuser, setCurrentUser }) => {
           <button className="btn-in btn">Clock-Out</button>
         </div>
         <div className="forms-container">
-          My Timestamps
-          <div className="timestamp-container"></div>
+          <h3>My Timestamps</h3>
+          <div className="timestamp-container">
+            {currentuser.map((time) =>
+              time.timestamp.map((times) => <span>{times}</span>)
+            )}
+          </div>
         </div>
       </article>
     </section>

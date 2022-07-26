@@ -20,7 +20,7 @@
       "department": "It",
       "avatar": "",
       "admin": false,
-      "timestamp": []
+      "timestamp": ["JuLy 23 2022 12:56 - JuLy 23 2022 12:56 ","JuLy 23 2022 12:56 - JuLy 23 2022 12:56 "]
     },
     {
       "id": 3,
@@ -31,82 +31,7 @@
       "staffid": "SD-978",
       "department": "System Design",
       "avatar": "",
-      "timestamp": []
-    },
-    {
-      "id": 4,
-      "username": "mimo",
-      "name": "Shilla Chemimo",
-      "password": "1234",
-      "staffid": "IT-234",
-      "department": "It",
-      "avatar": "",
-      "admin": false,
-      "timestamp": []
-    },
-    {
-      "id": 5,
-      "username": "ebbe",
-      "name": "Ebenezar Bukosia",
-      "password": "show!",
-      "admin": true,
-      "staffid": "SD-978",
-      "department": "System Design",
-      "avatar": "",
-      "timestamp": []
-    },
-    {
-      "id": 6,
-      "username": "mimo",
-      "name": "Shilla Chemimo",
-      "password": "1234",
-      "staffid": "IT-234",
-      "department": "It",
-      "avatar": "",
-      "admin": false,
-      "timestamp": []
-    },
-    {
-      "id": 7,
-      "username": "ebbe",
-      "name": "Ebenezar Bukosia",
-      "password": "show!",
-      "admin": true,
-      "staffid": "SD-978",
-      "department": "System Design",
-      "avatar": "",
-      "timestamp": []
-    },
-    {
-      "id": 8,
-      "username": "mimo",
-      "name": "Shilla Chemimo",
-      "password": "1234",
-      "staffid": "IT-234",
-      "department": "It",
-      "avatar": "",
-      "admin": false,
-      "timestamp": []
-    },
-    {
-      "name": "Oscar Obare",
-      "password": "oscar34",
-      "admin": false,
-      "staffid": "",
-      "department": "Support Desk",
-      "avatar": "https://ebe.png",
-      "timestamp": [],
-      "id": 9
-    },
-    {
-      "name": "Rose Oketh",
-      "password": "rose345",
-      "admin": true,
-      "staffid": "",
-      "department": "",
-      "avatar": "https://ebe.png",
-      "timestamp": [],
-      "id": 10
+      "timestamp": ["JuLy 23 2022 12:56 - JuLy 23 2022 12:56 ","JuLy 23 2022 12:56 - JuLy 23 2022 12:56","JuLy 23 2022 12:56 - JuLy 23 2022 12:56 ","JuLy 23 2022 12:56 - JuLy 23 2022 12:56 "]
     }
   ]
 }
