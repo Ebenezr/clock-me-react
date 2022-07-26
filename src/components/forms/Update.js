@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+import React, { useState, useEffect, useRef, useOutletContext } from "react";
 
-const Update = () => {
+const Update = ({currentuser}) => {
+  
+  console.log(currentuser)
   //hold user data
   const [formData, setFormData] = useState({
     name: "",
@@ -11,6 +13,7 @@ const Update = () => {
     avatar: "",
     timestamp: [],
   });
+  
   const userRef = useRef();
   const errRef = useRef();
   const [errMsg, setErrMsg] = useState("");

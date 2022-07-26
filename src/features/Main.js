@@ -11,6 +11,18 @@ import AddNew from "../components/forms/AddNew";
 import Update from "../components/forms/Update";
 
 const Main = () => {
+  const [currentuser, setCurrentUser] = useState([
+    {
+      id: 1,
+      name: "",
+      password: "",
+      admin: false,
+      staffid: "",
+      department: "",
+      avatar: "",
+      timestamp: [],
+    },
+  ]);
   const [users, setUsers] = useState([]);
   const url = "http://localhost:8004/users";
 
@@ -38,20 +50,44 @@ const Main = () => {
           <Route exact path="/dashboard" element={<Dashboard />} />
         </Routes>
         <Routes>
-          <Route exact path="/admin" element={<Admin employees={users} />}>
+          <Route
+            exact
+            path="/admin"
+            element={
+              <Admin
+                employees={users}
+                currentuser={currentuser}
+                setCurrentUser={setCurrentUser}
+              />
+            }
+          >
             <Route
               exact
               path="Addnew"
               element={<AddNew postData={postData} />}
             />
-            <Route exact path="update" element={<Update />} />
+            <Route
+              exact
+              path="update"
+              element={<Update currentuser={currentuser} />}
+            />
           </Route>
         </Routes>
         <Routes>
           <Route exact path="analytics" element={<Analytics />} />
         </Routes>
         <Routes>
-          <Route exact path="timecard" element={<Timecard />} />
+          <Route
+            exact
+            path="timecard"
+            element={
+              <Timecard
+                employees={users}
+                currentuser={currentuser}
+                setCurrentUser={setCurrentUser}
+              />
+            }
+          />
         </Routes>
       </div>
       <Footer />

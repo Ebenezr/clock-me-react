@@ -6,7 +6,7 @@
     width: 100%;
     display: grid;
     //place-items: center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     overflow: hidden;
     .right{
        // background: grey;
@@ -21,7 +21,7 @@
            
             background: white;
             border-radius: $border-radius-3;
-            width: 50%;
+            width: 80%;
             margin: 0.5rem auto;
             height: 18rem;
             display: flex;
@@ -92,7 +92,7 @@
             border-radius: $border-radius-3;
             flex-grow: 1;
             display: flex;
-            width: 50%;
+            width: 80%;
             justify-content: center;
             align-items: center;
             .addnew{
@@ -167,11 +167,13 @@
 
         form{
             position: relative;
+            padding-top: 1.5rem;
             //background: #fff;
             display: flex;
             align-items: center;
             justify-content: flex-end;
         .search{
+            
             position: relative;
             width: 100%;
             margin: 0 auto;
@@ -225,7 +227,7 @@
             flex-direction: column;
             overflow-y: auto;
             height: auto;
-            max-height: 30rem;
+            max-height: 35rem;
             width: 100%;
             span{
                 padding: 0.3rem;
