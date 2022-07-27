@@ -4,14 +4,13 @@ import Aside from "./components/nav/Aside";
 import Main from "./features/Main";
 import Login from "./features/Login";
 
-
 import "./components/scss/style.scss";
 
 const App = () => {
   return (
-    <main className="App">   
-       <Aside />
-       <Main />
+    <main className="App">
+      <Aside />
+      <Main />
     </main>
   );
 };

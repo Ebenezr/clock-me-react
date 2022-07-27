@@ -2,24 +2,26 @@ import React from "react";
 import profile from "../assets/images/ebe.png";
 
 const Userinfo = ({ currentuser }) => {
-  return (currentuser.map(user => (
-    <div className="card" key={user.id}>
-      <img src={profile} alt="avatar"/>
-      <h3>{user.name}</h3>
+  // console.log(currentuser.name);
+
+  return (
+    <div className="card">
+      <img src={profile} alt="avatar" />
+      <h3>{currentuser.name}</h3>
       <span className="card-info">
         <span>Usertype</span>
-        <p>{user.admin ? "Admin" : "User"}</p>
+        <p>{currentuser.admin ? "Admin" : "User"}</p>
       </span>
       <span className="card-info">
         <span>StaffId</span>
-        <p>{user.staffid}</p>
+        <p>{currentuser.staffid}</p>
       </span>
       <span className="card-info">
         <span>Department</span>
-        <p>{user.department}</p>
+        <p>{currentuser.department}</p>
       </span>
     </div>
-  )))
+  );
 };
 
 export default Userinfo;

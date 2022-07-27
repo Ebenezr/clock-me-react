@@ -6,12 +6,14 @@ import Welcomeinfo from "../components/cards/Welcomeinfo";
 import Starts from "../components/cards/Starts";
 import Searchbar from "../components/forms/Searchbar";
 
-const Admin = ({ employees, currentuser, setCurrentUser }) => {
+const Admin = ({ employees, currentuser, setCurrentUser, searchFunction }) => {
   const renderUser = (id) => {
     const user = employees.filter((element) => {
       return element.id === id;
     });
-    setCurrentUser(user);
+    //console.log(user);
+    const userobj = user[0];
+    setCurrentUser(userobj);
   };
 
   return (
@@ -19,7 +21,7 @@ const Admin = ({ employees, currentuser, setCurrentUser }) => {
       <article className="left">
         <Welcomeinfo />
         <Starts />
-        <Searchbar />
+        <Searchbar searchFunction={searchFunction} />
         <div className="users-list">
           <div className="user-title">
             <h3>Manage Employees</h3>

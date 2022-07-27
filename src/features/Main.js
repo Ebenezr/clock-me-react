@@ -11,18 +11,8 @@ import AddNew from "../components/forms/AddNew";
 import Update from "../components/forms/Update";
 
 const Main = () => {
-  const [currentuser, setCurrentUser] = useState([
-    {
-      id: 1,
-      name: "",
-      password: "",
-      admin: false,
-      staffid: "",
-      department: "",
-      avatar: "",
-      timestamp: [],
-    },
-  ]);
+  const [stamp, setTimeStamp] = useState([]);
+  const [currentuser, setCurrentUser] = useState({});
   const [users, setUsers] = useState([]);
   const url = "http://localhost:8004/users";
 
@@ -41,6 +31,15 @@ const Main = () => {
   useEffect(() => {
     fetchUsers();
   }, []);
+  //search function
+
+  function getSearch(str) {
+    console.log(users);
+    const newvalue = users.filter((user) => {
+      return user.name.toLowerCase().includes(str.toLowerCase());
+    });
+    setUsers(newvalue);
+  }
 
   return (
     <section className="container__main">
@@ -58,6 +57,7 @@ const Main = () => {
                 employees={users}
                 currentuser={currentuser}
                 setCurrentUser={setCurrentUser}
+                searchFunction={getSearch}
               />
             }
           >
@@ -69,7 +69,13 @@ const Main = () => {
             <Route
               exact
               path="update"
-              element={<Update currentuser={currentuser} />}
+              element={
+                <Update
+                  setCurrentuser={setCurrentUser}
+                  currentuser={currentuser}
+                  usrname={currentuser.name}
+                />
+              }
             />
           </Route>
         </Routes>
@@ -85,6 +91,9 @@ const Main = () => {
                 employees={users}
                 currentuser={currentuser}
                 setCurrentUser={setCurrentUser}
+                setTimeStamp={setTimeStamp}
+                stamp={stamp}
+                searchFunction={getSearch}
               />
             }
           />

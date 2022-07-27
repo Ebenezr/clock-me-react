@@ -20,7 +20,10 @@
       "department": "It",
       "avatar": "",
       "admin": false,
-      "timestamp": ["JuLy 23 2022 12:56 - JuLy 23 2022 12:56 ","JuLy 23 2022 12:56 - JuLy 23 2022 12:56 "]
+      "timestamp": [
+        "JuLy 23 2022 12:56 - JuLy 23 2022 12:56 ",
+        "JuLy 23 2022 12:56 - JuLy 23 2022 12:56 "
+      ]
     },
     {
       "id": 3,
@@ -31,7 +34,52 @@
       "staffid": "SD-978",
       "department": "System Design",
       "avatar": "",
-      "timestamp": ["JuLy 23 2022 12:56 - JuLy 23 2022 12:56 ","JuLy 23 2022 12:56 - JuLy 23 2022 12:56","JuLy 23 2022 12:56 - JuLy 23 2022 12:56 ","JuLy 23 2022 12:56 - JuLy 23 2022 12:56 "]
+      "timestamp": [
+        "JuLy 23 2022 12:56 - JuLy 23 2022 12:56 ",
+        "JuLy 23 2022 12:56 - JuLy 23 2022 12:56",
+        "JuLy 23 2022 12:56 - JuLy 23 2022 12:56 ",
+        "JuLy 23 2022 12:56 - JuLy 23 2022 12:56 "
+      ]
+    },
+    {
+      "name": "Mac Dey",
+      "password": "12345",
+      "admin": true,
+      "staffid": "CM-8348",
+      "department": "",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 4
+    },
+    {
+      "name": "Mac Dey",
+      "password": "12345",
+      "admin": true,
+      "staffid": "CM-8348",
+      "department": "",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 5
+    },
+    {
+      "name": "Mercy M",
+      "password": "123345r",
+      "admin": true,
+      "staffid": "CM-6018",
+      "department": "Support Desk",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 6
+    },
+    {
+      "name": "Mercy M",
+      "password": "123345r",
+      "admin": true,
+      "staffid": "CM-6018",
+      "department": "Support Desk",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 7
     }
   ]
 }
