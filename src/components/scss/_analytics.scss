@@ -1,9 +1,125 @@
 @import "./variables";
 
 .analytics__view{
-    background: rgb(47, 31, 188);
+   // background: rgb(149, 55, 55);
     height: 100%;
     width: 100%;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    //place-items: center;
+    // grid-template-rows: 1.5fr 1fr;
+    overflow: hidden;
+    .right{
+       // background: grey;
+    .emp__card{
+        width: 15rem;
+        border-radius: $border-radius-2;
+        height: 8rem;
+        background: white;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: repeat(1fr);
+    }
+       
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+       gap: 1rem;
+       img{
+        height: 2rem;
+        width: 2rem;
+       }
+
+    }
+    .left{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        max-height: 30%;
+        padding:1rem;
+        overflow: hidden;
+        .starts{
+            width: 100%;
+            justify-content: space-between;
+            display: flex;
+            padding: 0.8rem;
+            gap: 0.5rem;
+        .starts__card{
+            width: 12rem;
+            height: 7rem;
+            background: white;
+            padding: 0.6rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-direction: column;
+            border-radius: $border-radius-3;
+            :first-child{
+                color: $color-primary;
+                font-size: 1.7rem;
+            }
+            h3{
+                color: $color-dark;
+            }
+            small{
+                color: $color-info-dark;
+            }
+        }}
+
+        form{
+            position: relative;
+            padding-top: 1.5rem;
+            //background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        .search{
+            
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            background: transparent;
+            border-radius: $border-radius-2;
+            border: 2px solid $color-info-dark;
+            padding: 0.5rem;
+        }
+        .search__icon{
+            position: absolute;
+            font-size: 2rem;
+            margin-right: 0.5rem;
+            color: $color-info-dark;
+        }
+    
+    }
+    .welcome-info{
+        display: flex;
+        flex-direction: column;
+        margin: 1.5rem 0;
+        color: $color-info-dark;
+        h2{
+            color:$color-dark;
+        }
+
+
+    }
+    .users-list{
+        display: flex;
+        flex-direction: column;
+        overflow:hidden;    
+        .user-title{
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem 0;
+            h3{
+                color:$color-dark
+            }
+            select{
+                outline: none;
+                border-radius: $border-radius-1;
+                background: transparent;
+                color: $color-info-dark;
+            }
+        }
+
+
+    }
+    }
 }

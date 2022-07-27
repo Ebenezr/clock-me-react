@@ -40,6 +40,7 @@ const Main = () => {
     });
     setUsers(newvalue);
   }
+  console.log(users);
 
   return (
     <section className="container__main">
@@ -73,14 +74,17 @@ const Main = () => {
                 <Update
                   setCurrentuser={setCurrentUser}
                   currentuser={currentuser}
-                  usrname={currentuser.name}
                 />
               }
             />
           </Route>
         </Routes>
         <Routes>
-          <Route exact path="analytics" element={<Analytics />} />
+          <Route
+            exact
+            path="analytics"
+            element={<Analytics employees={users} />}
+          />
         </Routes>
         <Routes>
           <Route
