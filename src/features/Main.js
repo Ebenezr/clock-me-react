@@ -16,21 +16,43 @@ const Main = () => {
   const [users, setUsers] = useState([]);
   const url = "http://localhost:8004/users";
 
-  const fetchUsers = () => {
-    axios.get(url).then((responce) => {
-      const allusers = responce.data;
-      setUsers(allusers);
-    });
+  const fetchUsers = async () => {
+    try {
+      await axios.get(url).then((responce) => {
+        const allusers = responce.data;
+        setUsers(allusers);
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
   //delete user
-  const deleteUser = (id) => {
-    let deluser = users.filter((user) => user.id !== id);
-    setUsers(deluser);
+  const deleteUser = async (id) => {
+    try {
+      let deluser = users.filter((user) => user.id !== id);
+      setUsers(deluser);
+      await axios.delete(`${url}/${id}`);
+    } catch (err) {
+      console.error(err);
+    }
   };
+  // const functionName = async (param) => {
+  //   try {
+  //     //code
+  //     //api request
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
+
   //post data to db
-  const postData = (formData) => {
-    axios.post(url, formData);
-    setUsers([...users, formData]);
+  const postData = async (formData) => {
+    try {
+      await axios.post(url, formData);
+      setUsers([...users, formData]);
+    } catch (err) {
+      console.log(err);
+    }
   };
   //update front end list
   const addNewUser = () => {};

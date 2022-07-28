@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 
 function AddNew({ postData }) {
   //hold user data
-  const [formData, setFormData] = useState({
+  const initialState = {
     name: "",
     password: "",
     admin: false,
@@ -10,7 +10,12 @@ function AddNew({ postData }) {
     department: "",
     avatar: "",
     timestamp: [],
-  });
+  };
+
+  const [formData, setFormData, setState] = useState(initialState);
+  const clearState = () => {
+    setState({ ...initialState });
+  };
   const userRef = useRef();
   const errRef = useRef();
   const [errMsg, setErrMsg] = useState("");
@@ -54,7 +59,10 @@ function AddNew({ postData }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     postData(formData);
-    console.log(formData);
+    setTimeout(() => {
+      clearState();
+    }, 1000);
+    //console.log(formData);
   };
   return (
     <form className="addnew" onSubmit={handleSubmit}>
