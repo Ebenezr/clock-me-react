@@ -80,6 +80,96 @@
       "avatar": "https://ebe.png",
       "timestamp": [],
       "id": 7
+    },
+    {
+      "name": "Mac Dey",
+      "password": "12345",
+      "admin": true,
+      "staffid": "CM-8348",
+      "department": "",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 8
+    },
+    {
+      "name": "Mercy M",
+      "password": "123345r",
+      "admin": true,
+      "staffid": "CM-6018",
+      "department": "Support Desk",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 9
+    },
+    {
+      "name": "Mercy M",
+      "password": "123345r",
+      "admin": true,
+      "staffid": "CM-6018",
+      "department": "Support Desk",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 10
+    },
+    {
+      "name": "Mac Dey",
+      "password": "12345",
+      "admin": true,
+      "staffid": "CM-8348",
+      "department": "",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 11
+    },
+    {
+      "name": "Mercy M",
+      "password": "123345r",
+      "admin": true,
+      "staffid": "CM-6018",
+      "department": "Support Desk",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 12
+    },
+    {
+      "name": "Mercy M",
+      "password": "123345r",
+      "admin": true,
+      "staffid": "CM-6018",
+      "department": "Support Desk",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 13
+    },
+    {
+      "name": "Mac Dey",
+      "password": "12345",
+      "admin": true,
+      "staffid": "CM-8348",
+      "department": "",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 14
+    },
+    {
+      "name": "Mercy M",
+      "password": "123345r",
+      "admin": true,
+      "staffid": "CM-6018",
+      "department": "Support Desk",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 15
+    },
+    {
+      "name": "Mercy M",
+      "password": "123345r",
+      "admin": true,
+      "staffid": "CM-6018",
+      "department": "Support Desk",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 16
     }
   ]
 }

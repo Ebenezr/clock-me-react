@@ -8,15 +8,15 @@ const Employeecard = ({ usrname, admin, department, staffid }) => {
       <h3>{usrname}</h3>
       <span className="card-info">
         <span>Usertype</span>
-        <p>{admin ? "Admin" : "User"}</p>
+        <small>{admin ? "Admin" : "User"}</small>
       </span>
       <span className="card-info">
         <span>StaffId</span>
-        <p>{staffid}</p>
+        <small>{staffid}</small>
       </span>
       <span className="card-info">
         <span>Department</span>
-        <p>{department}</p>
+        <small>{department}</small>
       </span>
     </div>
   );

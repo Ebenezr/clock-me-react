@@ -70,9 +70,9 @@ const Timecard = ({
         <div className="forms-container">
           <h3>My Timestamps</h3>
           <div className="timestamp-container">
-            {currentuser.timestamp.map((times) => (
+            {/* {currentuser.timestamp.map((times) => (
               <span>{times}</span>
-            ))}
+            ))} */}
           </div>
         </div>
       </article>

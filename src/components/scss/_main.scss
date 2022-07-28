@@ -5,7 +5,8 @@
     display: grid;
     grid-template-rows: 6% auto 6%;
     overflow-y: hidden;
+   
   }
-  // .view__main{
-  //   //background: steelblue;
-  // }
+  .view__main{
+    padding-right: 1rem;
+  }
