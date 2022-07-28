@@ -6,7 +6,13 @@ import Welcomeinfo from "../components/cards/Welcomeinfo";
 import Starts from "../components/cards/Starts";
 import Searchbar from "../components/forms/Searchbar";
 
-const Admin = ({ employees, currentuser, setCurrentUser, searchFunction }) => {
+const Admin = ({
+  deleteUser,
+  employees,
+  currentuser,
+  setCurrentUser,
+  searchFunction,
+}) => {
   const renderUser = (id) => {
     const user = employees.filter((element) => {
       return element.id === id;
@@ -15,12 +21,16 @@ const Admin = ({ employees, currentuser, setCurrentUser, searchFunction }) => {
     const userobj = user[0];
     setCurrentUser(userobj);
   };
+  //delete user
+  const delUser = () => {
+    deleteUser(currentuser.id);
+  };
 
   return (
     <section className="admin__view">
       <article className="left">
         <Welcomeinfo />
-        <Starts />
+        <Starts employees={employees} />
         <Searchbar searchFunction={searchFunction} />
         <div className="users-list">
           <div className="user-title">
@@ -43,6 +53,9 @@ const Admin = ({ employees, currentuser, setCurrentUser, searchFunction }) => {
           <NavLink className="btn-new btn" activeclassname="active" to="addnew">
             Add New?
           </NavLink>
+          <button className="btn-del btn" onClick={delUser}>
+            Remove user
+          </button>
         </div>
         <div className="forms-container">
           <Outlet />

@@ -77,6 +77,18 @@
                 color: $color-info-dark;
                
             }
+            .btn-del{
+                background: $color-danger;
+                color: white;
+                border: none;
+                box-sizing: content-box;
+                &:hover{
+                    background: transparent;
+                    border: 2px solid $color-danger;
+                    color: $color-info-dark;
+
+                }
+            }
             .active{
                 border-radius: $border-radius-3;
                 

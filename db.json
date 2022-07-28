@@ -170,6 +170,56 @@
       "avatar": "https://ebe.png",
       "timestamp": [],
       "id": 16
+    },
+    {
+      "name": "Josua Korir",
+      "password": "123ef",
+      "admin": true,
+      "staffid": "CM-5803",
+      "department": "Human Resource",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 17
+    },
+    {
+      "name": "Mary Annate",
+      "password": "erty",
+      "admin": true,
+      "staffid": "CM-8745",
+      "department": "Hospitality",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 18
+    },
+    {
+      "name": "Alex Brown",
+      "password": "ale3",
+      "admin": true,
+      "staffid": "CM-5048",
+      "department": "Hospitality",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 19
+    },
+    {
+      "name": "Alex Brown",
+      "password": "ale3",
+      "admin": true,
+      "staffid": "CM-5048",
+      "department": "Hospitality",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 20
+    },
+    {
+      "name": "Osar Suf",
+      "password": "sdd",
+      "admin": false,
+      "staffid": "CM-9392",
+      "department": "Support Desk",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 21
     }
   ]
 }

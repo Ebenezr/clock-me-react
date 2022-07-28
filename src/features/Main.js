@@ -22,12 +22,19 @@ const Main = () => {
       setUsers(allusers);
     });
   };
+  //delete user
+  const deleteUser = (id) => {
+    let deluser = users.filter((user) => user.id !== id);
+    setUsers(deluser);
+  };
   //post data to db
   const postData = (formData) => {
     axios.post(url, formData);
+    setUsers([...users, formData]);
   };
+  //update front end list
+  const addNewUser = () => {};
   //add new employee
-
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -40,8 +47,6 @@ const Main = () => {
     });
     setUsers(newvalue);
   }
-  console.log(users);
-
   return (
     <section className="container__main">
       <Header />
@@ -55,6 +60,7 @@ const Main = () => {
             path="/admin"
             element={
               <Admin
+                deleteUser={deleteUser}
                 employees={users}
                 currentuser={currentuser}
                 setCurrentUser={setCurrentUser}

@@ -12,7 +12,7 @@ const Analytics = ({ employees, searchFunction }) => {
     <section className="analytics__view">
       <article className="left">
         <Welcomeinfo />
-        <Starts />
+        <Starts employees={employees} />
         <Searchbar searchFunction={searchFunction} />
         <div className="users-list">
           <div className="user-title">

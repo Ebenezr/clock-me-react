@@ -102,6 +102,8 @@ function AddNew({ postData }) {
         >
           <option value="Sales">Sales</option>
           <option value="Support Desk">Support Desk</option>
+          <option value="Human Resource">Human Resource</option>
+          <option value="Hospitality">Hospitality</option>
         </select>
       </label>
 

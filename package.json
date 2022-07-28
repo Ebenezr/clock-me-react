@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "concurrently": "^7.3.0",
     "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -20,7 +21,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server --watch db.json -p 8004"
+    "server": "json-server --watch db.json -p 8004",
+    "dev": "concurrently \"npm run server\"\"npm start\""
   },
   "eslintConfig": {
     "extends": [
