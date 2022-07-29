@@ -8,7 +8,7 @@ import {
 const Starts = ({ employees }) => {
   //console.log(employees.length);
   //get total number of departments
-  const unique = [...new Set(employees.map((item) => item.department))];
+  //const unique = [...new Set(employees.map((item) => item.department))];
   //console.log(unique.length);
   return (
     <div className="starts">
@@ -24,7 +24,7 @@ const Starts = ({ employees }) => {
       </div>
       <div className="starts__card">
         <BsPieChartFill />
-        <h3>{unique.length}</h3>
+        {/* <h3>{unique.length}</h3> */}
         <small>Total Departments</small>
       </div>
       <div className="starts__card">

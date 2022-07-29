@@ -17,6 +17,68 @@
        place-items: center;
        overflow-y: auto;
        max-height: 32rem;
+
+       .emp__card1 {
+        width: 18rem;
+        background: white;
+        height: 6rem;
+        border-radius: 0.7rem;
+        display: flex;
+        flex-direction: column;
+        padding: 0.3rem;
+      
+      img {
+        background-color: #14213d;
+        border-radius: 50%;
+        height: 2.5rem;
+        width: 2.5rem;
+        background-size: cover;
+        object-fit: cover;
+      }
+      .top {
+        height: 65%;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        font-weight: 500;
+        gap: 0.5rem;
+        position: relative;
+        font-size: 0.7rem;
+        h3{
+            color: $color-dark;
+        }
+      
+      &::after {
+        content: "";
+        width: 80%;
+        height: 0.05rem;
+        background-color: $color-dark;
+        position: absolute;
+        bottom: 0;
+        justify-self: center;
+        left: 50%;
+        transform: translate(-50%, 50%);
+      }}
+      .bottom {
+        justify-self: flex-end;
+        height: 30%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      
+      h4 {
+        font-weight: 300;
+        color: $color-info-dark;
+        font-size: 0.6rem;
+      }
+      small {
+        font-size: 0.5rem;
+        color: $color-primary;
+        font-weight: 500;
+      } }  
+
+    }
     .emp__card{
         width: 18rem;
         color: $color-info-dark;

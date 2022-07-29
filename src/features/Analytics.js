@@ -1,18 +1,28 @@
 import React from "react";
-import Userinfo from "../components/cards/Userinfo";
-import UserList from "../components/cards/UserList";
 import Welcomeinfo from "../components/cards/Welcomeinfo";
 import Starts from "../components/cards/Starts";
 import Searchbar from "../components/forms/Searchbar";
 import Employeecard from "../components/cards/Employeecard";
 
-const Analytics = ({ employees, searchFunction }) => {
-  console.log(employees);
+const Analytics = ({ searchFunction, allusers }) => {
+  // function zip() {
+  //   let args = [].slice.call(arguments);
+  //   let longest = args.reduce(function (profile, employees) {
+  //     return profile.length > employees.length ? profile : employees;
+  //   }, []);
+
+  //   return longest.map(function (_, i) {
+  //     return args.map(function (array) {
+  //       return array[i];
+  //     });
+  //   });
+  // }
+
   return (
     <section className="analytics__view">
       <article className="left">
         <Welcomeinfo />
-        <Starts employees={employees} />
+        <Starts employees={allusers} />
         <Searchbar searchFunction={searchFunction} />
         <div className="users-list">
           <div className="user-title">
@@ -26,13 +36,22 @@ const Analytics = ({ employees, searchFunction }) => {
         </div>
       </article>
       <article className="right">
-        {employees.map((employee) => (
+        {/* {employees.map((employee) => (
           <Employeecard
             key={employee.id}
             admin={employee.admin}
             staffid={employee.staffid}
             department={employee.department}
             usrname={employee.name}
+          />
+        ))} */}
+        {allusers.map((profile, index) => (
+          <Employeecard
+            key={index}
+            avatar={profile.picture.medium}
+            usrname={profile.name.first}
+            staffid={profile.cell}
+            department={profile.email}
           />
         ))}
       </article>

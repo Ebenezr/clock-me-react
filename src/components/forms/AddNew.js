@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 function AddNew({ postData }) {
   //hold user data
-  const initialState = {
+  const [formData, setFormData] = useState({
     name: "",
     password: "",
     admin: false,
@@ -10,13 +10,9 @@ function AddNew({ postData }) {
     department: "",
     avatar: "",
     timestamp: [],
-  };
+  });
 
-  const [formData, setFormData, setState] = useState(initialState);
-  const clearState = () => {
-    setState({ ...initialState });
-  };
-  const userRef = useRef();
+  const userRef = useRef(null);
   const errRef = useRef();
   const [errMsg, setErrMsg] = useState("");
   const [succes, setSuccess] = useState(false);
@@ -59,9 +55,16 @@ function AddNew({ postData }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     postData(formData);
-    setTimeout(() => {
-      clearState();
-    }, 1000);
+    setFormData({
+      name: "",
+      password: "",
+      admin: false,
+      staffid: "",
+      department: "",
+      avatar: "",
+      timestamp: [],
+    });
+
     //console.log(formData);
   };
   return (
@@ -69,6 +72,7 @@ function AddNew({ postData }) {
       <label>
         Name
         <input
+          required
           id="name"
           type="text"
           ref={userRef}
@@ -92,6 +96,7 @@ function AddNew({ postData }) {
       <label>
         Password
         <input
+          required
           id="password"
           type="text"
           className="inputs"

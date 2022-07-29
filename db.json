@@ -86,14 +86,34 @@
       "id": 22
     },
     {
-      "name": "maziwa mala",
-      "password": "erty",
+      "name": "React Champ",
+      "password": "reactwueh",
+      "admin": false,
+      "staffid": "CM-5410",
+      "department": "Support Desk",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 25
+    },
+    {
+      "name": "Mark Jones",
+      "password": "macjk",
       "admin": true,
-      "staffid": "CM-2960",
+      "staffid": "CM-8384",
+      "department": "Sales",
+      "avatar": "https://ebe.png",
+      "timestamp": [],
+      "id": 39
+    },
+    {
+      "name": "Joy Auma",
+      "password": "12345",
+      "admin": true,
+      "staffid": "CM-9615",
       "department": "Hospitality",
       "avatar": "https://ebe.png",
       "timestamp": [],
-      "id": 23
+      "id": 41
     }
   ]
 }

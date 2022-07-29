@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Userinfo from "../components/cards/Userinfo";
 import UserList from "../components/cards/UserList";
 import Welcomeinfo from "../components/cards/Welcomeinfo";
@@ -8,10 +8,14 @@ const Timecard = ({
   employees,
   currentuser,
   setCurrentUser,
-  stamp,
   setTimeStamp,
   searchFunction,
 }) => {
+  const [stamps, setStamp] = useState([
+    {
+      timestamp: [],
+    },
+  ]);
   const renderUser = (id) => {
     const user = employees.filter((element) => {
       return element.id === id;
@@ -19,8 +23,9 @@ const Timecard = ({
     const userobj = user[0];
     setCurrentUser(userobj);
   };
-  console.log(currentuser);
-  //console.log(currentuser);
+  //setStamp(currentuser.timestamp);
+  //console.log(currentuser.timestamp);
+  //console.log(stamps);
   //currentuser.map((time) => console.log(time.timestamp));
   //clock in function
   //function retuns clock in timestamp
@@ -34,8 +39,14 @@ const Timecard = ({
   const clockOutTime = () => {
     timeOut = new Date();
     let currentstamp = `${timeIn}-${timeOut}`;
-    setTimeStamp(currentstamp);
-    console.log(stamp);
+    const key = stamps.timestamp;
+    setStamp([{ [key]: currentstamp }]);
+    //const key = currentuser.timestamp;
+    //let value = currentstamp;
+    //setCurrentUser({ ...currentuser, [key]: value });
+    console.log("after");
+    console.log(stamps);
+    console.log(currentuser.name);
 
     //setCurrentUser({ ...currentuser, currentuser.timestamp:timestamp });
   };
@@ -70,8 +81,8 @@ const Timecard = ({
         <div className="forms-container">
           <h3>My Timestamps</h3>
           <div className="timestamp-container">
-            {currentuser.timestamp.map((times) => (
-              <span>{times}</span>
+            {currentuser.timestamp.map((times, index) => (
+              <span key={index}>{times}</span>
             ))}
           </div>
         </div>

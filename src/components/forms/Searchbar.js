@@ -7,10 +7,14 @@ const Searchbar = ({ searchFunction }) => {
     e.preventDefault();
     setSearchValue(e.target.value);
     console.log(searchValue);
-    searchFunction(searchValue);
+    searchFunction(e.target.value);
   };
   return (
-    <form>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
       <BiSearchAlt className="search__icon" />
       <input
         className="search"

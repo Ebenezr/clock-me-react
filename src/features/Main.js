@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Dashboard from "./Dashboard";
@@ -12,10 +12,21 @@ import Update from "../components/forms/Update";
 
 const Main = () => {
   const [stamp, setTimeStamp] = useState([]);
-  const [currentuser, setCurrentUser] = useState({});
+  const [currentuser, setCurrentUser] = useState({
+    name: "",
+    password: "",
+    admin: false,
+    staffid: "",
+    department: "",
+    avatar: "",
+    timestamp: [],
+  });
   const [users, setUsers] = useState([]);
+  const [avatar, setAvater] = useState([]);
+  const [filteredUsers, setFilteredUsers] = useState(users);
+  //local api link
   const url = "http://localhost:8004/users";
-
+  //fetch users
   const fetchUsers = async () => {
     try {
       await axios.get(url).then((responce) => {
@@ -26,24 +37,37 @@ const Main = () => {
       console.log(err);
     }
   };
+  //randomuser api fetch
+  async function getAvatar() {
+    const users = await fetch("https://randomuser.me/api/?results=46");
+    return users.json();
+  }
+
   //delete user
   const deleteUser = async (id) => {
     try {
       let deluser = users.filter((user) => user.id !== id);
       setUsers(deluser);
       await axios.delete(`${url}/${id}`);
+      setCurrentUser("");
     } catch (err) {
       console.error(err);
     }
   };
-  // const functionName = async (param) => {
-  //   try {
-  //     //code
-  //     //api request
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
+  //filter function
+  function filterUsers(str) {
+    //setFilteredUsers(users);
+    // users.filter((user) => {
+    //   if (str === "all" || str === "") {
+    //     setUsers(user);
+    //   } else {
+    //     const newvalue = users.filter((user) =>
+    //       user.department.toLowerCase().includes(str.toLowerCase())
+    //     );
+    //     setUsers(newvalue);
+    //   }
+    // });
+  }
 
   //post data to db
   const postData = async (formData) => {
@@ -59,22 +83,37 @@ const Main = () => {
   //add new employee
   useEffect(() => {
     fetchUsers();
+    getAvatar().then((data) => {
+      setAvater(data.results);
+    });
   }, []);
   //search function
 
+  console.log(avatar);
+
   function getSearch(str) {
-    console.log(users);
-    const newvalue = users.filter((user) => {
-      return user.name.toLowerCase().includes(str.toLowerCase());
-    });
-    setUsers(newvalue);
+    setFilteredUsers(
+      users.filter((user) => user.name.match(new RegExp(str, "i")))
+    );
+    console.log(filteredUsers);
+    setUsers(filteredUsers);
   }
   return (
     <section className="container__main">
       <Header />
       <div className="view__main">
         <Routes>
-          <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route
+            exact
+            path="/dashboard"
+            element={
+              <Dashboard
+                employees={users}
+                filterUsers={filterUsers}
+                allusers={avatar}
+              />
+            }
+          />
         </Routes>
         <Routes>
           <Route
@@ -87,6 +126,8 @@ const Main = () => {
                 currentuser={currentuser}
                 setCurrentUser={setCurrentUser}
                 searchFunction={getSearch}
+                filterUsers={filterUsers}
+                allusers={avatar}
               />
             }
           >
@@ -111,7 +152,13 @@ const Main = () => {
           <Route
             exact
             path="analytics"
-            element={<Analytics employees={users} />}
+            element={
+              <Analytics
+                employees={users}
+                filterUsers={filterUsers}
+                allusers={avatar}
+              />
+            }
           />
         </Routes>
         <Routes>
@@ -126,6 +173,7 @@ const Main = () => {
                 setTimeStamp={setTimeStamp}
                 stamp={stamp}
                 searchFunction={getSearch}
+                allusers={avatar}
               />
             }
           />

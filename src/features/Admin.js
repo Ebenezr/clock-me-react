@@ -12,6 +12,7 @@ const Admin = ({
   currentuser,
   setCurrentUser,
   searchFunction,
+  filterUsers,
 }) => {
   const renderUser = (id) => {
     const user = employees.filter((element) => {
@@ -35,10 +36,16 @@ const Admin = ({
         <div className="users-list">
           <div className="user-title">
             <h3>Manage Employees</h3>
-            <select type="option">
-              <option>Filter</option>
-              <option>System Design</option>
-              <option>Sales</option>
+            <select
+              type="option"
+              onChange={(e) => {
+                filterUsers(e.target.value);
+              }}
+            >
+              <option value="all">Filter</option>
+              <option value="System Design">System Design</option>
+              <option value="sales">Sales</option>
+              <option value="hospitality">Hospitality</option>
             </select>
           </div>
           <UserList employees={employees} renderUser={renderUser} />
