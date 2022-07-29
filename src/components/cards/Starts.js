@@ -5,26 +5,25 @@ import {
   BsServer,
 } from "react-icons/bs";
 
-const Starts = ({ employees }) => {
-  //console.log(employees.length);
+const Starts = ({ employees, users }) => {
   //get total number of departments
-  //const unique = [...new Set(employees.map((item) => item.department))];
-  //console.log(unique.length);
+  const unique = [...new Set(employees.map((item) => item.department))];
+
   return (
     <div className="starts">
       <div className="starts__card">
         <BsFillCalendarDateFill />
-        <h3>7</h3>
+        <h3>{employees.length}</h3>
         <small>Emmployees working today</small>
       </div>
       <div className="starts__card">
         <BsFillCalendarDateFill />
-        <h3>7</h3>
-        <small>Emmployees working today</small>
+        <h3>{unique.length}</h3>
+        <small>Active Employees</small>
       </div>
       <div className="starts__card">
         <BsPieChartFill />
-        {/* <h3>{unique.length}</h3> */}
+        <h3>{unique.length}</h3>
         <small>Total Departments</small>
       </div>
       <div className="starts__card">

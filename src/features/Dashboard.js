@@ -5,19 +5,18 @@ import Searchbar from "../components/forms/Searchbar";
 import Employeecard from "../components/cards/Employeecard";
 
 const Dashboard = ({ searchFunction, allusers, employees }) => {
-  function zip() {
-    let args = [].slice.call(arguments);
-    let longest = args.reduce(function (profile, employees) {
-      return profile.length > employees.length ? profile : employees;
-    }, []);
+  // function zip() {
+  //   let args = [].slice.call(arguments);
+  //   let longest = args.reduce(function (profile, employees) {
+  //     return profile.length > employees.length ? profile : employees;
+  //   }, []);
 
-    return longest.map(function (_, i) {
-      return args.map(function (array) {
-        return array[i];
-      });
-    });
-  }
-  // console.log(zip(employees, allusers));
+  //   return longest.map(function (_, i) {
+  //     return args.map(function (array) {
+  //       return array[i];
+  //     });
+  //   });
+  // }
 
   return (
     <section className="dashboard__view">
@@ -28,24 +27,10 @@ const Dashboard = ({ searchFunction, allusers, employees }) => {
         <div className="users-list">
           <div className="user-title">
             <h3>Employees </h3>
-            <select type="option">
-              <option>Filter</option>
-              <option>System Design</option>
-              <option>Sales</option>
-            </select>
           </div>
         </div>
       </article>
       <article className="right">
-        {/* {employees.map((employee) => (
-          <Employeecard
-            key={employee.id}
-            admin={employee.admin}
-            staffid={employee.staffid}
-            department={employee.department}
-            usrname={employee.name}
-          />
-        ))} */}
         {allusers.map((profile, index) => (
           <Employeecard
             key={index}

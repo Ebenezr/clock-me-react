@@ -10,8 +10,7 @@ import axios from "../api/axios";
 import AddNew from "../components/forms/AddNew";
 import Update from "../components/forms/Update";
 
-const Main = () => {
-  const [stamp, setTimeStamp] = useState([]);
+const Main = ({ authenticated, setAuthenticated }) => {
   const [currentuser, setCurrentUser] = useState({
     name: "",
     password: "",
@@ -35,6 +34,7 @@ const Main = () => {
       });
     } catch (err) {
       console.log(err);
+      alert("Couldn't Fetch Data :(");
     }
   };
   //randomuser api fetch
@@ -50,13 +50,15 @@ const Main = () => {
       setUsers(deluser);
       await axios.delete(`${url}/${id}`);
       setCurrentUser("");
+      alert("User Deleted succesfully :)");
     } catch (err) {
       console.error(err);
+      alert("Task Failed :(");
     }
   };
   //filter function
   function filterUsers(str) {
-    //setFilteredUsers(users);
+    // setFilteredUsers(users);
     // users.filter((user) => {
     //   if (str === "all" || str === "") {
     //     setUsers(user);
@@ -74,12 +76,34 @@ const Main = () => {
     try {
       await axios.post(url, formData);
       setUsers([...users, formData]);
+      alert("User Added succesfully :)");
     } catch (err) {
       console.log(err);
+      alert("Task Failed :(");
     }
   };
-  //update front end list
-  const addNewUser = () => {};
+  //patch timestamp to db
+  const postTimeStamp = async (id, formData) => {
+    try {
+      await axios.patch(`${url}/${id}`, formData);
+      setUsers([...users, formData]);
+    } catch (err) {
+      console.log(err);
+      alert("Task Failed :(");
+    }
+  };
+
+  //update user details request
+  const updateUser = async (id, formData) => {
+    try {
+      await axios.patch(`${url}/${id}`, formData);
+      setUsers(users);
+      alert("User Updated succesfully :)");
+    } catch (err) {
+      console.log(err);
+      alert("Task Failed :(");
+    }
+  };
   //add new employee
   useEffect(() => {
     fetchUsers();
@@ -98,7 +122,10 @@ const Main = () => {
   }
   return (
     <section className="container__main">
-      <Header />
+      <Header
+        authenticated={authenticated}
+        setAuthenticated={setAuthenticated}
+      />
       <div className="view__main">
         <Routes>
           <Route
@@ -141,6 +168,9 @@ const Main = () => {
                 <Update
                   setCurrentuser={setCurrentUser}
                   currentuser={currentuser}
+                  updateUser={updateUser}
+                  setUsers={setUsers}
+                  users={users}
                 />
               }
             />
@@ -168,8 +198,7 @@ const Main = () => {
                 employees={users}
                 currentuser={currentuser}
                 setCurrentUser={setCurrentUser}
-                setTimeStamp={setTimeStamp}
-                stamp={stamp}
+                postTimeStamp={postTimeStamp}
                 searchFunction={getSearch}
                 allusers={users}
               />

@@ -1,13 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "../api/axios";
 import { useNavigate } from "react-router-dom";
-import { MdCheckBox } from "react-icons/md";
-import AuthContext from "../context-API/AuthProvider";
 
 function Login() {
   const navigate = useNavigate();
   const url = "https://db-v23.herokuapp.com/users";
   const [users, setUsers] = useState([]);
+  const [account, setAccount] = useState({});
+  const [loggeduser, setLoggedUser] = useState(
+    localStorage.getItem(localStorage.getItem("loggeduser") || {})
+  );
   const [authenticated, setauthenticated] = useState(
     localStorage.getItem(localStorage.getItem("authenticated") || false)
   );
@@ -55,17 +57,22 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
-    const account = users.find((user) => user.username === formData.username);
-    if (account && account.password === formData.password) {
+    const useraccount = users.find(
+      (user) => user.username === formData.username
+    );
+    if (useraccount && useraccount.password === formData.password) {
       setauthenticated(true);
       console.log(account);
-      console.log("Loggedin");
+      setAccount(useraccount);
+      setLoggedUser(account);
+      localStorage.setItem("loggeduser", account);
       localStorage.setItem("authenticated", true);
+      alert(`Logged in succesfus as ${account.name}`);
       navigate("/home/dashboard");
-      console.log(authenticated);
+      console.log(loggeduser);
       return;
     }
-    console.log("Nope");
+    alert("Wrong Username or Password");
   };
 
   return (

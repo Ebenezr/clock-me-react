@@ -8,10 +8,10 @@ const Timecard = ({
   employees,
   currentuser,
   setCurrentUser,
-  setTimeStamp,
   searchFunction,
+  postTimeStamp,
 }) => {
-  const [stamps, setStamp] = useState("");
+  const [stamps, setStamp] = useState();
   const renderUser = (id) => {
     const user = employees.filter((element) => {
       return element.id === id;
@@ -19,12 +19,7 @@ const Timecard = ({
     const userobj = user[0];
     setCurrentUser(userobj);
   };
-  //setStamp(currentuser.timestamp);
-  //console.log(currentuser.timestamp);
-  //console.log(stamps);
-  //currentuser.map((time) => console.log(time.timestamp));
-  //clock in function
-  //function retuns clock in timestamp
+
   let timeIn;
   let timeOut;
   const clockInTime = () => {
@@ -35,13 +30,20 @@ const Timecard = ({
   const clockOutTime = () => {
     //chech if user acccount is selected
     if (!(currentuser.name == "")) {
-      timeOut = new Date().toGMTString();
-      let currentstamp = `${timeIn}-${timeOut}`;
-      setStamp(currentstamp);
-      currentuser.timestamp.push(stamps);
-      setCurrentUser(currentuser);
+      if (!timeIn.length < 1) {
+        timeOut = new Date().toGMTString();
+        let currentstamp = `${timeIn}-${timeOut}`;
+        setStamp(currentstamp);
+        currentuser.timestamp.push(stamps);
+        //if current stamp is empty dont..
+        if (!currentstamp.length < 1) {
+          setCurrentUser(currentuser);
+          console.log(currentuser.id);
+          postTimeStamp(currentuser.id, currentuser);
+        }
+      }
     } else {
-      alert("select your account!");
+      alert("Please select your account!");
     }
   };
 

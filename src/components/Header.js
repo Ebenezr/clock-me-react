@@ -1,19 +1,26 @@
-import React from 'react';
+import React from "react";
 import { RiLogoutCircleLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
 import { MdMenu } from "react-icons/md";
 
-
-const Header=()=> {
+const Header = ({ authenticated, setAuthenticated }) => {
   return (
     <header>
-        <button> <MdMenu/> </button>
-        <span>
-            <RiLogoutCircleLine />
-            <h3>Logout</h3>
-        </span>
+      <button>
+        <MdMenu />
+      </button>
+      <span>
+        <RiLogoutCircleLine />
+        <h3
+          onClick={() => {
+            setAuthenticated(!authenticated);
+            localStorage.clear();
+          }}
+        >
+          Logout
+        </h3>
+      </span>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

@@ -4,6 +4,7 @@ function AddNew({ postData }) {
   //hold user data
   const [formData, setFormData] = useState({
     name: "",
+    username: "",
     password: "",
     admin: false,
     staffid: "",
@@ -13,19 +14,7 @@ function AddNew({ postData }) {
   });
 
   const userRef = useRef(null);
-  const errRef = useRef();
-  const [errMsg, setErrMsg] = useState("");
-  const [succes, setSuccess] = useState(false);
-
-  //function to generate staffid
   function staffIdGen() {
-    //get first letter
-    // const firstLetters = str
-    //   .split(" ")
-    //   .map((word) => word[0])
-    //   .join("")
-    //   .toUpperCase();
-
     const number = Math.floor(1000 + Math.random() * 9000);
     return `CM-${number}`;
   }
@@ -56,6 +45,7 @@ function AddNew({ postData }) {
     event.preventDefault();
     postData(formData);
     setFormData({
+      username: "",
       name: "",
       password: "",
       admin: false,
@@ -64,8 +54,6 @@ function AddNew({ postData }) {
       avatar: "",
       timestamp: [],
     });
-
-    //console.log(formData);
   };
   return (
     <form className="addnew" onSubmit={handleSubmit}>
@@ -80,6 +68,18 @@ function AddNew({ postData }) {
           value={formData.name}
           onChange={handleChange}
           placeholder="Jon Doe"
+        />
+      </label>
+      <label>
+        UserName
+        <input
+          required
+          id="username"
+          type="text"
+          className="inputs"
+          value={formData.username}
+          onChange={handleChange}
+          placeholder="ebbe"
         />
       </label>
       <label>

@@ -23,13 +23,16 @@ const App = () => {
   }, []);
   console.log(authenticated);
   if (!authenticated) {
-    //    // Redirect
+    // Redirect
     return navigate("/login");
   } else {
     return (
       <main className="App">
         <Aside />
-        <Main />
+        <Main
+          authenticated={authenticated}
+          setAuthenticated={setauthenticated}
+        />
       </main>
     );
   }

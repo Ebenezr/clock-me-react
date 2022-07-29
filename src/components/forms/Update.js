@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const Update = ({ currentuser, setCurrentuser, usrname }) => {
+const Update = ({
+  currentuser,
+  setCurrentuser,
+  updateUser,
+  setUsers,
+  users,
+}) => {
   //hold user data
   const [formData, setFormData] = useState({
     name: currentuser.name,
@@ -11,13 +17,10 @@ const Update = ({ currentuser, setCurrentuser, usrname }) => {
     avatar: currentuser.avatar,
     timestamp: currentuser.timestamp,
   });
-  //console.log(name);
+  //console.log(formData.admin);
   //setAdmin(currentuser.admin);
 
   const userRef = useRef();
-  // const errRef = useRef();
-  // const [errMsg, setErrMsg] = useState("");
-  // const [succes, setSuccess] = useState(false);
   //set focus
   useEffect(() => {
     userRef.current.focus();
@@ -34,9 +37,9 @@ const Update = ({ currentuser, setCurrentuser, usrname }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //setCurrentuser(formData);
-    console.log(formData);
     setCurrentuser(formData);
+    setUsers(users);
+    updateUser(currentuser.id, formData);
   };
 
   return (
@@ -104,7 +107,7 @@ const Update = ({ currentuser, setCurrentuser, usrname }) => {
         <input
           id="admin"
           type="checkbox"
-          value={formData.admin}
+          checked={formData.admin}
           onChange={handleChange}
         />
       </span>
