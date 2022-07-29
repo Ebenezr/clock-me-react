@@ -10,3 +10,10 @@
   .view__main{
     padding-right: 1rem;
   }
+@media (max-width: $breakpoint-tablet) {
+    .container__main{
+        height: 100vh;
+        overflow-y: unset;
+        max-width: inherit;
+    }
+}

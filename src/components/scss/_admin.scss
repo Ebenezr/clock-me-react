@@ -262,3 +262,75 @@
     }
     }
 }
+@media (max-width: $breakpoint-tablet) {
+    .admin__view{
+        height: auto;
+        grid-template-columns: 1fr;
+        overflow: unset;
+
+    }
+    .left{
+        width: 100%;
+    form{
+        width: 95%;
+        margin: 0 auto;
+    }
+    .users-list{
+        padding: 1rem 0;
+        width: 90%;
+        margin: 0 auto;
+   
+    }
+    }
+    .right{
+        width: 100%;
+        height: auto;
+        .card{
+            width: 90% !important;
+        }
+        .btn-del{
+            &:focus{
+                background: transparent;
+                border: 2px solid $color-danger;
+                color: $color-info-dark;
+
+            }
+        }
+        .forms-container{
+            width: 90% !important;
+            padding: 1rem;
+            .addnew{
+                width: 80%;
+            }
+        }
+    }
+   
+   
+}
+@media (max-width: $breakpoint-mobile) {
+    .admin__view{
+        .right-manage{
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            .btn{
+                padding: 0.2rem 0.5rem !important;
+                border-radius: $border-radius-3;
+                font-weight: 700;
+            }
+            .btn-del{
+                &:focus{
+                    background: transparent;
+                    border: 2px solid $color-danger;
+                    color: $color-info-dark;
+
+                }
+            }
+        }
+    
+ 
+}
+   
+}

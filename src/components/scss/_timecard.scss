@@ -1,11 +1,11 @@
 @import "./variables";
 
 .timecard__view{
-    // background: rgb(149, 55, 55);
+   
      height: 100%;
      width: 100%;
      display: grid;
-     //place-items: center;
+     
      grid-template-columns: 1.5fr 1fr;
      overflow: hidden;
      .right{
@@ -247,3 +247,10 @@
      }
      }
  }
+ @media (max-width: $breakpoint-tablet) {
+    .timecard__view{
+        
+         grid-template-columns: 1fr;
+         overflow: auto;
+    }
+}

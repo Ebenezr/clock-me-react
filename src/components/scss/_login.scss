@@ -103,3 +103,10 @@
     }
 
 }
+@media (max-width: $breakpoint-tablet) {
+    #login{
+        .container__login{
+            min-width: 60%; 
+        }
+    }
+}

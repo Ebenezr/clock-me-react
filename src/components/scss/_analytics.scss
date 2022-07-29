@@ -1,18 +1,15 @@
 @import "./variables";
 
 .analytics__view{
-   // background: rgb(149, 55, 55);
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    //place-items: center;
-    // grid-template-rows: 1.5fr 1fr;
     overflow: hidden;
     .right{
-       // background: grey;
+      
        display: grid;
-       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
        gap: 1rem;
        place-items: center;
        overflow-y: auto;
@@ -217,4 +214,55 @@
 
     }
     }
+}
+@media (max-width: $breakpoint-tablet) {
+    .analytics__view{
+        .right{
+            height: 100% !important;
+      
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            .emp__card1 {
+                width: 16rem;
+                height: 8rem;
+                padding-left: 0.5rem;
+            }
+        }
+
+
+    }
+}
+@media (max-width: $breakpoint-mobile) {
+    .analytics__view{
+        max-width: 100vw !important;
+        overflow-x: hidden;
+        .right{
+            height: 100% !important;
+            padding: 0 0.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem !important;
+            .emp__card1 {
+                width: 12rem;
+                height: 8rem;
+                padding-left: 0.5rem;
+                .bottom {
+                    justify-self: flex-end;
+                    height: 30%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                }
+            }
+        }
+
+
+    }
+    .left{
+    .starts{
+        padding: 0.5rem !important;
+    }
+}
 }

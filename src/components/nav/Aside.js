@@ -1,19 +1,12 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  NavLink,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   MdSpaceDashboard,
   MdAdminPanelSettings,
   MdAnalytics,
   MdOutlineAccessTimeFilled,
   MdOutlineClose,
-  MdMenu,
   MdWbSunny,
-  IoMoonSharp,
 } from "react-icons/md";
 import { IoTimer } from "react-icons/io5";
 import { BsMoonFill } from "react-icons/bs";

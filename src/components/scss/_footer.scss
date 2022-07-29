@@ -17,3 +17,16 @@ footer{
 
     
 }
+@media (max-width: $breakpoint-tablet) {
+    footer{
+        padding: 0.5rem 1rem;
+        font-weight: 300;
+        font-size: 0.7rem;
+        a{
+         
+            font-weight: 500;
+        }
+    
+        
+    }
+}

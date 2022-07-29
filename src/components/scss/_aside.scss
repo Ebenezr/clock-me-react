@@ -8,6 +8,7 @@ aside {
     flex-direction: column;
     gap:1rem;
     position: relative;
+    transition: 300ms;
     fieldset{
         border:none;
     }
@@ -128,4 +129,16 @@ aside {
         }
     }
 
+}
+@media (max-width: $breakpoint-tablet) {
+    aside{
+        position: absolute;
+        width: 60%;
+        z-index: 11;
+        height: 100%;
+        display: none;
+       // background: hsl(0 0% 0% / 0.75);
+       // transform: translateX(-80%);
+        
+    }
 }
