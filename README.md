@@ -14,13 +14,25 @@ Clock-me: is is a web application used to keep track of employees and thier cloc
 
 ## SCREENSHOTS
 
+### Mobile View
+
+#### ![image](./src/components/assets/images/mobile.png)
+
 ### Login
 
-#### ![image](./src/components/images/login.png)
+#### ![image](./src/components/assets/images/loginpanel.png)
 
-### HomePage
+### Dashboard Panel
 
-#### ![image](./src/components/images/home.png)
+#### ![image](./src/components/assets/images/dashboard.png)
+
+### Admin Panel
+
+#### ![image](./src/components/assets/images/adminpanel.png)
+
+### Timecard Panel
+
+#### ![image](./src/components/assets/images/timecard.png)
 
 ## Table of content
 
@@ -45,7 +57,17 @@ languages used are:
 
 ### Features
 
-As a user you ase able to:
+- As a employee you can be able to:
+
+1. Login with his/her account.
+2. Record and track his/her timestamp.
+3. view company analytics
+
+- AS an admin you can be able to:
+
+4. Add new employees.
+5. Update employees details.
+6. Delete an Employee
 
 ---
 
@@ -59,6 +81,9 @@ the application solve this such as recoding each day's clock-in and clock-out ti
 
 ### challenges
 
+- Implementing login authentification.
+- Implementing theme change.
+
 ---
 
 ## How to set up and run the project
@@ -70,17 +95,43 @@ the application solve this such as recoding each day's clock-in and clock-out ti
 
 ---
 
-## Dependencies
+### Dependencies
 
 - npm
 
 ---
 
-#### setup
+### setup
 
 clone the repo using the command
 
+- `git clone https://github.com/Ebenezr/clock-me-react.git`
+
+change directory using command
+
+- `cd clock-me-react`
+
+open project in vscode texteditor
+
+- `code .`
+
+install dependancies packages
+
+- `run npm install`
+
+run back end
+
+- `npm run server`
+
+run front end
+
+- `npm start`
+
 ---
+
+#### live link
+
+- run the following live link in your browser https://clock-me.herokuapp.com
 
 ## How to use the project
 
