@@ -11,11 +11,7 @@ const Timecard = ({
   setTimeStamp,
   searchFunction,
 }) => {
-  const [stamps, setStamp] = useState([
-    {
-      timestamp: [],
-    },
-  ]);
+  const [stamps, setStamp] = useState("");
   const renderUser = (id) => {
     const user = employees.filter((element) => {
       return element.id === id;
@@ -32,23 +28,21 @@ const Timecard = ({
   let timeIn;
   let timeOut;
   const clockInTime = () => {
-    timeIn = new Date();
+    timeIn = new Date().toGMTString();
     return timeIn;
   };
   //function clock-out and return day's timestamp
   const clockOutTime = () => {
-    timeOut = new Date();
-    let currentstamp = `${timeIn}-${timeOut}`;
-    const key = stamps.timestamp;
-    setStamp([{ [key]: currentstamp }]);
-    //const key = currentuser.timestamp;
-    //let value = currentstamp;
-    //setCurrentUser({ ...currentuser, [key]: value });
-    console.log("after");
-    console.log(stamps);
-    console.log(currentuser.name);
-
-    //setCurrentUser({ ...currentuser, currentuser.timestamp:timestamp });
+    //chech if user acccount is selected
+    if (!(currentuser.name == "")) {
+      timeOut = new Date().toGMTString();
+      let currentstamp = `${timeIn}-${timeOut}`;
+      setStamp(currentstamp);
+      currentuser.timestamp.push(stamps);
+      setCurrentUser(currentuser);
+    } else {
+      alert("select your account!");
+    }
   };
 
   return (

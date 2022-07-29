@@ -89,8 +89,6 @@ const Main = () => {
   }, []);
   //search function
 
-  console.log(avatar);
-
   function getSearch(str) {
     setFilteredUsers(
       users.filter((user) => user.name.match(new RegExp(str, "i")))
