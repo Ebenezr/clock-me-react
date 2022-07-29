@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-function nav() {
+const nav = () => {
   return (
     <nav className="mobileNav">
       <NavLink className="nav__link" to="/home/dashboard">
@@ -17,6 +17,6 @@ function nav() {
       </NavLink>
     </nav>
   );
-}
+};
 
 export default nav;
