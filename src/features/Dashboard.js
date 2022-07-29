@@ -4,19 +4,20 @@ import Starts from "../components/cards/Starts";
 import Searchbar from "../components/forms/Searchbar";
 import Employeecard from "../components/cards/Employeecard";
 
-const Dashboard = ({ searchFunction, allusers }) => {
-  // function zip() {
-  //   let args = [].slice.call(arguments);
-  //   let longest = args.reduce(function (profile, employees) {
-  //     return profile.length > employees.length ? profile : employees;
-  //   }, []);
+const Dashboard = ({ searchFunction, allusers, employees }) => {
+  function zip() {
+    let args = [].slice.call(arguments);
+    let longest = args.reduce(function (profile, employees) {
+      return profile.length > employees.length ? profile : employees;
+    }, []);
 
-  //   return longest.map(function (_, i) {
-  //     return args.map(function (array) {
-  //       return array[i];
-  //     });
-  //   });
-  // }
+    return longest.map(function (_, i) {
+      return args.map(function (array) {
+        return array[i];
+      });
+    });
+  }
+  // console.log(zip(employees, allusers));
 
   return (
     <section className="dashboard__view">

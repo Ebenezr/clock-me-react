@@ -1,11 +1,17 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "../api/axios";
+import { useNavigate } from "react-router-dom";
 import { MdCheckBox } from "react-icons/md";
 import AuthContext from "../context-API/AuthProvider";
 
 function Login() {
-  const baseURL = "http://localhost:8004/users";
-  const { setAuth } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const url = "https://db-v23.herokuapp.com/users";
+  const [users, setUsers] = useState([]);
+  const [authenticated, setauthenticated] = useState(
+    localStorage.getItem(localStorage.getItem("authenticated") || false)
+  );
+  // const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
   //hold user data
@@ -16,9 +22,20 @@ function Login() {
   });
   const [errMsg, setErrMsg] = useState("");
   const [succes, setSuccess] = useState(false);
-
+  //fetch users
+  const fetchUsers = async () => {
+    try {
+      await axios.get(url).then((responce) => {
+        const allusers = responce.data;
+        setUsers(allusers);
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
   useEffect(() => {
     userRef.current.focus();
+    fetchUsers();
   }, []);
   //empty out pass and user field
   useEffect(() => {
@@ -37,41 +54,18 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post(
-        baseURL,
-        JSON.stringify({
-          username: formData.username,
-          password: formData.password,
-        }),
-        {
-          headers: { "Content-Type": "application/json" },
-          withCredentials: true,
-        }
-      );
-      const accessToken = response?.data?.accessToken;
-      const roles = response?.data?.roles;
-      setAuth({
-        usernmame: formData.username,
-        password: formData.password,
-        roles,
-        accessToken,
-      });
-      formData.username("");
-      formData.password("");
-      setSuccess(true);
-    } catch (err) {
-      if (!err?.response) {
-        setErrMsg("No Server Response");
-      } else if (err.response?.status === 400) {
-        setErrMsg("Missing Username or Password");
-      } else if (err.response?.status === 401) {
-        setErrMsg("Unauthorized");
-      } else {
-        setErrMsg("Login Failed");
-      }
-      errRef.current.focus();
+    console.log(formData);
+    const account = users.find((user) => user.username === formData.username);
+    if (account && account.password === formData.password) {
+      setauthenticated(true);
+      console.log(account);
+      console.log("Loggedin");
+      localStorage.setItem("authenticated", true);
+      navigate("/home/dashboard");
+      console.log(authenticated);
+      return;
     }
+    console.log("Nope");
   };
 
   return (

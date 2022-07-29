@@ -46,16 +46,6 @@
       "id": 17
     },
     {
-      "name": "Mary Annate",
-      "password": "erty",
-      "admin": true,
-      "staffid": "CM-8745",
-      "department": "Hospitality",
-      "avatar": "https://ebe.png",
-      "timestamp": [],
-      "id": 18
-    },
-    {
       "name": "Alex Brown",
       "password": "ale3",
       "admin": true,
@@ -74,16 +64,6 @@
       "avatar": "https://ebe.png",
       "timestamp": [],
       "id": 21
-    },
-    {
-      "name": "Njeri Wel",
-      "password": "ascsa",
-      "admin": true,
-      "staffid": "CM-3948",
-      "department": "Hospitality",
-      "avatar": "https://ebe.png",
-      "timestamp": [],
-      "id": 22
     },
     {
       "name": "React Champ",

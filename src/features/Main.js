@@ -25,7 +25,7 @@ const Main = () => {
   const [avatar, setAvater] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState(users);
   //local api link
-  const url = "http://localhost:8004/users";
+  const url = "https://db-v23.herokuapp.com/users";
   //fetch users
   const fetchUsers = async () => {
     try {
@@ -105,7 +105,7 @@ const Main = () => {
         <Routes>
           <Route
             exact
-            path="/dashboard"
+            path="dashboard"
             element={
               <Dashboard
                 employees={users}
@@ -118,7 +118,7 @@ const Main = () => {
         <Routes>
           <Route
             exact
-            path="/admin"
+            path="admin"
             element={
               <Admin
                 deleteUser={deleteUser}
@@ -173,7 +173,7 @@ const Main = () => {
                 setTimeStamp={setTimeStamp}
                 stamp={stamp}
                 searchFunction={getSearch}
-                allusers={avatar}
+                allusers={users}
               />
             }
           />
