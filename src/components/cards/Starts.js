@@ -14,7 +14,7 @@ const Starts = ({ employees, users }) => {
       <div className="starts__card">
         <BsFillCalendarDateFill />
         <h3>{employees.length}</h3>
-        <small>Emmployees working today</small>
+        <small>Employees working today</small>
       </div>
       <div className="starts__card">
         <BsFillCalendarDateFill />

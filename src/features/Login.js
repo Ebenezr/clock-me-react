@@ -62,12 +62,12 @@ function Login() {
     );
     if (useraccount && useraccount.password === formData.password) {
       setauthenticated(true);
-      console.log(account);
+      // console.log(account);
       setAccount(useraccount);
       setLoggedUser(account);
       localStorage.setItem("loggeduser", account);
       localStorage.setItem("authenticated", true);
-      alert(`Logged in succesfus as ${account.name}`);
+      alert(`Logged in successful as ${useraccount.name}`);
       navigate("/home/dashboard");
       console.log(loggeduser);
       return;
