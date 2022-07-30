@@ -11,7 +11,7 @@ const Admin = ({
   employees,
   currentuser,
   setCurrentUser,
-  searchFunction,
+  filterUsers,
   searchTerm,
   handleSearch,
 }) => {

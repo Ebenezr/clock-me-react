@@ -57,20 +57,6 @@ const Main = ({ authenticated, setAuthenticated }) => {
       alert("Task Failed :(");
     }
   };
-  //filter function
-  function filterUsers(str) {
-    // setFilteredUsers(users);
-    // users.filter((user) => {
-    //   if (str === "all" || str === "") {
-    //     setUsers(user);
-    //   } else {
-    //     const newvalue = users.filter((user) =>
-    //       user.department.toLowerCase().includes(str.toLowerCase())
-    //     );
-    //     setUsers(newvalue);
-    //   }
-    // });
-  }
 
   //post data to db
   const postData = async (formData) => {
@@ -126,6 +112,20 @@ const Main = ({ authenticated, setAuthenticated }) => {
     }
     setSearchResults(users);
   }
+  //filter function
+  function filterUsers(str) {
+    setSearchTerm(str);
+    if (searchTerm !== "") {
+      const newUserList = users.filter((user) => {
+        return Object.values(user)
+          .join(" ")
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
+      });
+      setSearchResults(newUserList);
+    }
+    setSearchResults(users);
+  }
   return (
     <section className="container__main">
       <Header
@@ -158,10 +158,10 @@ const Main = ({ authenticated, setAuthenticated }) => {
                 employees={searchTerm.length < 1 ? users : searchResults}
                 currentuser={currentuser}
                 setCurrentUser={setCurrentUser}
-                filterUsers={filterUsers}
                 allusers={avatar}
                 searchTerm={searchTerm}
                 handleSearch={handleSearch}
+                filterUsers={filterUsers}
               />
             }
           >
@@ -195,6 +195,7 @@ const Main = ({ authenticated, setAuthenticated }) => {
                 allusers={avatar}
                 searchTerm={searchTerm}
                 handleSearch={handleSearch}
+                filterUsers={filterUsers}
               />
             }
           />
@@ -212,6 +213,7 @@ const Main = ({ authenticated, setAuthenticated }) => {
                 allusers={users}
                 searchTerm={searchTerm}
                 handleSearch={handleSearch}
+                filterUsers={filterUsers}
               />
             }
           />

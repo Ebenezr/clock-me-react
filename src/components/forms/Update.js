@@ -10,6 +10,7 @@ const Update = ({
   //hold user data
   const [formData, setFormData] = useState({
     name: currentuser.name,
+    username: currentuser.username,
     password: currentuser.password,
     admin: currentuser.admin,
     staffid: currentuser.staffid,
@@ -17,8 +18,6 @@ const Update = ({
     avatar: currentuser.avatar,
     timestamp: currentuser.timestamp,
   });
-  //console.log(formData.admin);
-  //setAdmin(currentuser.admin);
 
   const userRef = useRef();
   //set focus
@@ -57,6 +56,18 @@ const Update = ({
         />
       </label>
       <label>
+        UserName
+        <input
+          required
+          id="username"
+          type="text"
+          className="inputs"
+          value={formData.username}
+          onChange={handleChange}
+          placeholder="ebbe"
+        />
+      </label>
+      <label>
         Avatar
         <input
           id="avatar"
@@ -88,6 +99,8 @@ const Update = ({
         >
           <option value="Sales">Sales</option>
           <option value="Support Desk">Support Desk</option>
+          <option value="Human Resource">Human Resource</option>
+          <option value="Hospitality">Hospitality</option>
         </select>
       </label>
 

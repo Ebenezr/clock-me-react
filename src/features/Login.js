@@ -84,11 +84,11 @@ function Login() {
         <form onSubmit={handleSubmit}>
           <h4>Sign in to start your session</h4>
           <label>
-            Email
+            Username
             <input
               className="inputs"
               type="text"
-              placeholder="Ebbe"
+              placeholder="Usename"
               id="username"
               ref={userRef}
               autoComplete="off"

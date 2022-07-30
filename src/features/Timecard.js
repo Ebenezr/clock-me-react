@@ -11,6 +11,7 @@ const Timecard = ({
   searchTerm,
   postTimeStamp,
   handleSearch,
+  filterUsers,
 }) => {
   const [stamps, setStamp] = useState();
   const renderUser = (id) => {
@@ -56,10 +57,16 @@ const Timecard = ({
         <div className="users-list">
           <div className="user-title">
             <h3>Employees List</h3>
-            <select type="option">
-              <option>Filter</option>
-              <option>System Design</option>
-              <option>Sales</option>
+            <select
+              type="option"
+              onChange={(e) => {
+                filterUsers(e.target.value);
+              }}
+            >
+              <option value="all">Filter</option>
+              <option value="System Design">System Design</option>
+              <option value="sales">Sales</option>
+              <option value="hospitality">Hospitality</option>
             </select>
           </div>
           <UserList employees={employees} renderUser={renderUser} />
