@@ -1,37 +1,28 @@
-import React from "react";
+import React,{useRef} from "react";
 import Welcomeinfo from "../components/cards/Welcomeinfo";
 import Starts from "../components/cards/Starts";
 import Searchbar from "../components/forms/Searchbar";
 import Employeecard from "../components/cards/Employeecard";
 
-const Analytics = ({ searchTerm, allusers, handleSearch, filterUsers,accName }) => {
-  // function zip() {
-  //   let args = [].slice.call(arguments);
-  //   let longest = args.reduce(function (profile, employees) {
-  //     return profile.length > employees.length ? profile : employees;
-  //   }, []);
+const Analytics = ({ searchTerm, employee, handleSearch, filterUsers,accName }) => {
+const inputEl=useRef();
+  const handleFilter=()=>{
+    filterUsers(inputEl.current.value);
 
-  //   return longest.map(function (_, i) {
-  //     return args.map(function (array) {
-  //       return array[i];
-  //     });
-  //   });
-  // }
-
+  }
   return (
     <section className="analytics__view">
       <article className="left">
         <Welcomeinfo accName={accName}/>
-        <Starts employees={allusers} />
+        <Starts employees={employee} />
         <Searchbar searchTerm={searchTerm} handleSearch={handleSearch} />
         <div className="users-list">
           <div className="user-title">
             <h3>Employees </h3>
             <select
               type="option"
-              onChange={(e) => {
-                filterUsers(e.target.value);
-              }}
+              ref={inputEl}
+              onChange={handleFilter}
             >
               <option value="all">Filter</option>
               <option value="System Design">System Design</option>
@@ -45,19 +36,21 @@ const Analytics = ({ searchTerm, allusers, handleSearch, filterUsers,accName }) 
         {/* {employees.map((employee) => (
           <Employeecard
             key={employee.id}
+            avatar={employee.avatar}
             admin={employee.admin}
             staffid={employee.staffid}
             department={employee.department}
             usrname={employee.name}
           />
         ))} */}
-        {allusers.map((profile, index) => (
+        {employee.map((employee) => (
           <Employeecard
-            key={index}
-            avatar={profile.picture.medium}
-            usrname={profile.name.first}
-            staffid={profile.cell}
-            department={profile.email}
+          key={employee.id}
+        
+            avatar={employee.avatar}
+            usrname={employee.name}
+            staffid={employee.staffid}
+            department={employee.department}
           />
         ))}
       </article>

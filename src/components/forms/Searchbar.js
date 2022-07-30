@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 
-const Searchbar = ({ searchTerm, handleSearch }) => {
+const Searchbar = ({handleSearch }) => {
   const inputEl = useRef("");
   const handleSearchFunction = () => {
     handleSearch(inputEl.current.value);
@@ -19,8 +19,7 @@ const Searchbar = ({ searchTerm, handleSearch }) => {
         className="search"
         type="search"
         placeholder="Search by name"
-        onChange={handleSearchFunction}
-        value={searchTerm}
+        onChange={handleSearchFunction} 
       />
     </form>
   );

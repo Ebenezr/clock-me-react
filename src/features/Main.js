@@ -195,8 +195,7 @@ const Main = ({ authenticated, setAuthenticated,accName }) => {
             path="analytics"
             element={
               <Analytics
-                employees={searchTerm.length < 1 ? users : searchResult}
-                allusers={avatar}
+                employee={searchTerm.length < 1 ? users : searchResult}
                 searchTerm={searchTerm}
                 handleSearch={handleSearch}
                 filterUsers={filterUsers}
