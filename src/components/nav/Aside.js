@@ -10,9 +10,9 @@ import {
 } from "react-icons/md";
 import { IoTimer } from "react-icons/io5";
 import { BsMoonFill } from "react-icons/bs";
-import profile from "../assets/images/ebe.png";
 
-const Aside = ({accName,admin}) => {
+
+const Aside = ({accName,admin,accImg}) => {
   return (
     <aside>
       <div className="top">
@@ -82,7 +82,7 @@ const Aside = ({accName,admin}) => {
       <div className="aside__footer">
         <div className="profile">
           <div className="profile-photo">
-            <img src={profile} />
+            <img src={accImg} />
           </div>
           <div className="info">
             <p>

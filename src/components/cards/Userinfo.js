@@ -1,12 +1,11 @@
 import React from "react";
-import profile from "../assets/images/ebe.png";
 
 const Userinfo = ({ currentuser }) => {
 
 
   return (
     <div className="card">
-      <img src={profile} alt="avatar" />
+      <img src={currentuser.avatar} alt="avatar" />
       <h3>{currentuser.name}</h3>
       <span className="card-info">
         <span>Usertype</span>

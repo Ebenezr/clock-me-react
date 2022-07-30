@@ -14,9 +14,16 @@ function AddNew({ postData }) {
   });
 
   const userRef = useRef(null);
+  //funtion to generate staffid
   function staffIdGen() {
     const number = Math.floor(1000 + Math.random() * 9000);
     return `CM-${number}`;
+  }
+  //fuction to generate profile pictures
+  function proPicGen() {
+    let imgurl ='https://picsum.photos/';
+    const number = Math.floor(100 + Math.random() * 10);
+    return `${imgurl}/${number}`;
   }
   //set focus
   useEffect(() => {
@@ -28,7 +35,7 @@ function AddNew({ postData }) {
   }, [formData.department]);
 
   const getStaffid = () => {
-    setFormData({ ...formData, staffid: staffIdGen() });
+    setFormData({ ...formData, staffid: staffIdGen(),avatar:proPicGen() });
   };
   //hangle change event
   const handleChange = (event) => {

@@ -123,8 +123,10 @@
                     border: 1px solid $color-info-dark;
                     border-radius: $border-radius-1;
                     outline: none;
+                    color: $color-dark;
                 }
                 .checkbox{
+                    accent-color: $color-primary;
                     display: flex;
                     align-items: center;
                     padding: 0.4rem;

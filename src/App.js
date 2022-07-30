@@ -36,6 +36,7 @@ const App = () => {
       <main className="App">
         <Aside accName={name.name} admin={name.admin} />
         <Main
+        accImg={name.avatar}
         accName={name.name}
           authenticated={authenticated}
           setAuthenticated={setauthenticated}
