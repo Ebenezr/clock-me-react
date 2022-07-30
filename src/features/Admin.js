@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useRef} from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import Userinfo from "../components/cards/Userinfo";
 import UserList from "../components/cards/UserList";
@@ -11,15 +11,20 @@ const Admin = ({
   employees,
   currentuser,
   setCurrentUser,
-  filterUsers,
   searchTerm,
   handleSearch,
 }) => {
+  const inputEl = useRef("");
+  const handleFilterFunction = () => {
+    handleSearch(inputEl.current.value);
+    
+  };
+
   const renderUser = (id) => {
     const user = employees.filter((element) => {
       return element.id === id;
     });
-    //console.log(user);
+  
     const userobj = user[0];
     setCurrentUser(userobj);
   };
@@ -39,9 +44,8 @@ const Admin = ({
             <h3>Manage Employees</h3>
             <select
               type="option"
-              onChange={(e) => {
-                filterUsers(e.target.value);
-              }}
+              onChange={handleFilterFunction}
+              ref={inputEl}
             >
               <option value="all">Filter</option>
               <option value="System Design">System Design</option>
@@ -50,7 +54,7 @@ const Admin = ({
             </select>
           </div>
           <UserList
-            employees={employees.length > 0 ? employees : "No user available"}
+            employees={employees}
             renderUser={renderUser}
           />
         </div>

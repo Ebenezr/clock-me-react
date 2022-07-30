@@ -23,7 +23,7 @@ const Main = ({ authenticated, setAuthenticated }) => {
   });
   const [users, setUsers] = useState([]);
   const [avatar, setAvater] = useState([]);
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResult, setSearchResult] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   //local api link
   const url = "https://db-v23.herokuapp.com/users";
@@ -44,6 +44,12 @@ const Main = ({ authenticated, setAuthenticated }) => {
     const users = await fetch("https://randomuser.me/api/?results=46");
     return users.json();
   }
+  useEffect(() => {
+    fetchUsers();
+    getAvatar().then((data) => {
+      setAvater(data.results);
+    });
+  }, []);
 
   //delete user
   const deleteUser = async (id) => {
@@ -93,39 +99,34 @@ const Main = ({ authenticated, setAuthenticated }) => {
     }
   };
   //add new employee
-  useEffect(() => {
-    fetchUsers();
-    getAvatar().then((data) => {
-      setAvater(data.results);
-    });
-  }, []);
+
   //search function
   function handleSearch(str) {
     setSearchTerm(str);
+    
     if (searchTerm !== "") {
-      const newUserList = users.filter((user) => {
-        return Object.values(user)
-          .join(" ")
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
-      });
-      setSearchResults(newUserList);
+      const newList =(users.filter((user) =>Object.values(user).join(" ").toLowerCase().includes(searchTerm.toLowerCase())))
+      setSearchResult(newList);
+      
+      return searchResult;
+      
     }
-    setSearchResults(users);
+    setSearchResult(users);
+  
   }
+ 
   //filter function
   function filterUsers(str) {
     setSearchTerm(str);
-    if (searchTerm !== "") {
-      const newUserList = users.filter((user) => {
-        return Object.values(user)
-          .join(" ")
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
-      });
-      setSearchResults(newUserList);
+   
+    if (searchTerm !== "all") {
+      const newList =(users.filter((user) =>Object.values(user).join(" ").toLowerCase().includes(searchTerm.toLowerCase())))
+      setSearchResult(newList);
+      
+      return searchResult;
+      
     }
-    setSearchResults(users);
+    setSearchResult(users);
   }
   return (
     <section className="container__main">
@@ -140,7 +141,7 @@ const Main = ({ authenticated, setAuthenticated }) => {
             path="dashboard"
             element={
               <Dashboard
-                employees={searchTerm.length < 1 ? users : searchResults}
+                employees={searchTerm.length < 1 ? users : searchResult}
                 filterUsers={filterUsers}
                 allusers={avatar}
                 searchTerm={searchTerm}
@@ -156,7 +157,7 @@ const Main = ({ authenticated, setAuthenticated }) => {
             element={
               <Admin
                 deleteUser={deleteUser}
-                employees={searchTerm.length < 1 ? users : searchResults}
+                employees={searchTerm.length < 1 ? users : searchResult}
                 currentuser={currentuser}
                 setCurrentUser={setCurrentUser}
                 allusers={avatar}
@@ -192,7 +193,7 @@ const Main = ({ authenticated, setAuthenticated }) => {
             path="analytics"
             element={
               <Analytics
-                employees={searchTerm.length < 1 ? users : searchResults}
+                employees={searchTerm.length < 1 ? users : searchResult}
                 allusers={avatar}
                 searchTerm={searchTerm}
                 handleSearch={handleSearch}
@@ -207,7 +208,7 @@ const Main = ({ authenticated, setAuthenticated }) => {
             path="timecard"
             element={
               <Timecard
-                employees={searchTerm.length < 1 ? users : searchResults}
+                employees={searchTerm.length < 1 ? users : searchResult}
                 currentuser={currentuser}
                 setCurrentUser={setCurrentUser}
                 postTimeStamp={postTimeStamp}

@@ -56,20 +56,20 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+  
     const useraccount = users.find(
       (user) => user.username === formData.username
     );
     if (useraccount && useraccount.password === formData.password) {
       setauthenticated(true);
-      // console.log(account);
+    
       setAccount(useraccount);
       setLoggedUser(account);
       localStorage.setItem("loggeduser", account);
       localStorage.setItem("authenticated", true);
       alert(`Logged in successful as ${useraccount.name}`);
       navigate("/home/dashboard");
-      console.log(loggeduser);
+     
       return;
     }
     alert("Wrong Username or Password");

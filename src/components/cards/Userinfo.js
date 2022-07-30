@@ -2,7 +2,7 @@ import React from "react";
 import profile from "../assets/images/ebe.png";
 
 const Userinfo = ({ currentuser }) => {
-  // console.log(currentuser.name);
+
 
   return (
     <div className="card">

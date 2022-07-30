@@ -5,6 +5,7 @@ const Searchbar = ({ searchTerm, handleSearch }) => {
   const inputEl = useRef("");
   const handleSearchFunction = () => {
     handleSearch(inputEl.current.value);
+    
   };
   return (
     <form

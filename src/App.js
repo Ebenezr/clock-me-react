@@ -21,7 +21,7 @@ const App = () => {
       setauthenticated(loggedInUser);
     }
   }, []);
-  console.log(authenticated);
+ 
   if (!authenticated) {
     // Redirect
     return navigate("/login");

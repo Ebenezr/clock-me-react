@@ -31,16 +31,16 @@ const Timecard = ({
   //function clock-out and return day's timestamp
   const clockOutTime = () => {
     //chech if user acccount is selected
-    if (!(currentuser.name == "")) {
-      if (!timeIn.length < 1) {
+    if (!(currentuser.name === "")) {
+      if (!timeIn.length < 1 || timeIn !== "" )  {
         timeOut = new Date().toGMTString();
         let currentstamp = `${timeIn}-${timeOut}`;
         setStamp(currentstamp);
         currentuser.timestamp.push(stamps);
         //if current stamp is empty dont..
-        if (!currentstamp.length < 1) {
+        if (!currentstamp.length < 1 || currentstamp !== "") {
           setCurrentUser(currentuser);
-          console.log(currentuser.id);
+        
           postTimeStamp(currentuser.id, currentuser);
         }
       }
