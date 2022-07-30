@@ -13,6 +13,7 @@ import Update from "../components/forms/Update";
 const Main = ({ authenticated, setAuthenticated }) => {
   const [currentuser, setCurrentUser] = useState({
     name: "",
+    username: "",
     password: "",
     admin: false,
     staffid: "",
