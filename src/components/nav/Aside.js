@@ -12,7 +12,7 @@ import { IoTimer } from "react-icons/io5";
 import { BsMoonFill } from "react-icons/bs";
 import profile from "../assets/images/ebe.png";
 
-const Aside = () => {
+const Aside = ({accName,admin}) => {
   return (
     <aside>
       <div className="top">
@@ -86,9 +86,9 @@ const Aside = () => {
           </div>
           <div className="info">
             <p>
-              <b>Ebenezar</b>
+              <b>{accName}</b>
             </p>
-            <small className="text-muted">Admin</small>
+            <small className="text-muted">{admin?'Admin':'User'}</small>
           </div>
         </div>
       </div>

@@ -7,12 +7,9 @@ function Login() {
   const url = "https://db-v23.herokuapp.com/users";
   const [users, setUsers] = useState([]);
   const [account, setAccount] = useState({});
-  const [loggeduser, setLoggedUser] = useState(
-    localStorage.getItem(localStorage.getItem("loggeduser") || {})
-  );
-  const [authenticated, setauthenticated] = useState(
-    localStorage.getItem(localStorage.getItem("authenticated") || false)
-  );
+  const [name, setName] = useState("");
+  const [loggeduser, setLoggedUser] = useState({});
+  const [authenticated, setauthenticated] = useState(false);
   // const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
@@ -64,9 +61,10 @@ function Login() {
       setauthenticated(true);
     
       setAccount(useraccount);
-      setLoggedUser(account);
-      localStorage.setItem("loggeduser", account);
-      localStorage.setItem("authenticated", true);
+      setLoggedUser(useraccount);
+      localStorage.setItem("name", JSON.stringify(useraccount));
+      localStorage.setItem("authenticated", JSON.stringify(true));
+     
       alert(`Logged in successful as ${useraccount.name}`);
       navigate("/home/dashboard");
      

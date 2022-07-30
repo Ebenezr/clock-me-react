@@ -4,7 +4,7 @@ import Starts from "../components/cards/Starts";
 import Searchbar from "../components/forms/Searchbar";
 import Employeecard from "../components/cards/Employeecard";
 
-const Analytics = ({ searchTerm, allusers, handleSearch, filterUsers }) => {
+const Analytics = ({ searchTerm, allusers, handleSearch, filterUsers,accName }) => {
   // function zip() {
   //   let args = [].slice.call(arguments);
   //   let longest = args.reduce(function (profile, employees) {
@@ -21,7 +21,7 @@ const Analytics = ({ searchTerm, allusers, handleSearch, filterUsers }) => {
   return (
     <section className="analytics__view">
       <article className="left">
-        <Welcomeinfo />
+        <Welcomeinfo accName={accName}/>
         <Starts employees={allusers} />
         <Searchbar searchTerm={searchTerm} handleSearch={handleSearch} />
         <div className="users-list">

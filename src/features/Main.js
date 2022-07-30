@@ -10,7 +10,7 @@ import axios from "../api/axios";
 import AddNew from "../components/forms/AddNew";
 import Update from "../components/forms/Update";
 
-const Main = ({ authenticated, setAuthenticated }) => {
+const Main = ({ authenticated, setAuthenticated,accName }) => {
   const [currentuser, setCurrentUser] = useState({
     name: "",
     username: "",
@@ -146,6 +146,7 @@ const Main = ({ authenticated, setAuthenticated }) => {
                 allusers={avatar}
                 searchTerm={searchTerm}
                 handleSearch={handleSearch}
+                accName={accName}
               />
             }
           />
@@ -164,6 +165,7 @@ const Main = ({ authenticated, setAuthenticated }) => {
                 searchTerm={searchTerm}
                 handleSearch={handleSearch}
                 filterUsers={filterUsers}
+                accName={accName}
               />
             }
           >
@@ -198,6 +200,7 @@ const Main = ({ authenticated, setAuthenticated }) => {
                 searchTerm={searchTerm}
                 handleSearch={handleSearch}
                 filterUsers={filterUsers}
+                accName={accName}
               />
             }
           />
@@ -216,6 +219,7 @@ const Main = ({ authenticated, setAuthenticated }) => {
                 searchTerm={searchTerm}
                 handleSearch={handleSearch}
                 filterUsers={filterUsers}
+                accName={accName}
               />
             }
           />

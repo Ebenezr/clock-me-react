@@ -12,6 +12,7 @@ const Timecard = ({
   postTimeStamp,
   handleSearch,
   filterUsers,
+  accName
 }) => {
   const [stamps, setStamp] = useState();
   const renderUser = (id) => {
@@ -52,7 +53,7 @@ const Timecard = ({
   return (
     <section className="timecard__view">
       <article className="left">
-        <Welcomeinfo />
+        <Welcomeinfo accName={accName}/>
         <Searchbar searchTerm={searchTerm} handleSearch={handleSearch} />
         <div className="users-list">
           <div className="user-title">

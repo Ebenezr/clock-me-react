@@ -13,6 +13,7 @@ const Admin = ({
   setCurrentUser,
   searchTerm,
   handleSearch,
+  accName
 }) => {
   const inputEl = useRef("");
   const handleFilterFunction = () => {
@@ -36,7 +37,7 @@ const Admin = ({
   return (
     <section className="admin__view">
       <article className="left">
-        <Welcomeinfo />
+        <Welcomeinfo accName={accName}/>
         <Starts employees={employees} />
         <Searchbar searchTerm={searchTerm} handleSearch={handleSearch} />
         <div className="users-list">
