@@ -10,7 +10,7 @@ import axios from "../api/axios";
 import AddNew from "../components/forms/AddNew";
 import Update from "../components/forms/Update";
 
-const Main = ({ authenticated, setAuthenticated,accName }) => {
+const Main = ({ authenticated, setAuthenticated,accName,acc }) => {
   const [currentuser, setCurrentUser] = useState({
     name: "",
     username: "",
@@ -45,6 +45,7 @@ const Main = ({ authenticated, setAuthenticated,accName }) => {
     return users.json();
   }
   useEffect(() => {
+    setCurrentUser(acc)
     fetchUsers();
     getAvatar().then((data) => {
       setAvater(data.results);

@@ -31,11 +31,15 @@ const App = () => {
       // Redirect if not loggedin
     }
   }, []);
+  if(!authenticated){
+    navigate("/");
+  }
  
     return (
       <main className="App">
         <Aside accName={name.name} admin={name.admin} />
         <Main
+        acc={name}
         accImg={name.avatar}
         accName={name.name}
           authenticated={authenticated}
