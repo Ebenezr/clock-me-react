@@ -22,7 +22,8 @@ const Main = ({ authenticated, setAuthenticated }) => {
   });
   const [users, setUsers] = useState([]);
   const [avatar, setAvater] = useState([]);
-  const [filteredUsers, setFilteredUsers] = useState(users);
+  const [searchResults, setSearchResults] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   //local api link
   const url = "https://db-v23.herokuapp.com/users";
   //fetch users
@@ -112,13 +113,18 @@ const Main = ({ authenticated, setAuthenticated }) => {
     });
   }, []);
   //search function
-
-  function getSearch(str) {
-    setFilteredUsers(
-      users.filter((user) => user.name.match(new RegExp(str, "i")))
-    );
-    console.log(filteredUsers);
-    setUsers(filteredUsers);
+  function handleSearch(str) {
+    setSearchTerm(str);
+    if (searchTerm !== "") {
+      const newUserList = users.filter((user) => {
+        return Object.values(user)
+          .join(" ")
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
+      });
+      setSearchResults(newUserList);
+    }
+    setSearchResults(users);
   }
   return (
     <section className="container__main">
@@ -133,9 +139,11 @@ const Main = ({ authenticated, setAuthenticated }) => {
             path="dashboard"
             element={
               <Dashboard
-                employees={users}
+                employees={searchTerm.length < 1 ? users : searchResults}
                 filterUsers={filterUsers}
                 allusers={avatar}
+                searchTerm={searchTerm}
+                handleSearch={handleSearch}
               />
             }
           />
@@ -147,12 +155,13 @@ const Main = ({ authenticated, setAuthenticated }) => {
             element={
               <Admin
                 deleteUser={deleteUser}
-                employees={users}
+                employees={searchTerm.length < 1 ? users : searchResults}
                 currentuser={currentuser}
                 setCurrentUser={setCurrentUser}
-                searchFunction={getSearch}
                 filterUsers={filterUsers}
                 allusers={avatar}
+                searchTerm={searchTerm}
+                handleSearch={handleSearch}
               />
             }
           >
@@ -182,9 +191,10 @@ const Main = ({ authenticated, setAuthenticated }) => {
             path="analytics"
             element={
               <Analytics
-                employees={users}
-                filterUsers={filterUsers}
+                employees={searchTerm.length < 1 ? users : searchResults}
                 allusers={avatar}
+                searchTerm={searchTerm}
+                handleSearch={handleSearch}
               />
             }
           />
@@ -195,12 +205,13 @@ const Main = ({ authenticated, setAuthenticated }) => {
             path="timecard"
             element={
               <Timecard
-                employees={users}
+                employees={searchTerm.length < 1 ? users : searchResults}
                 currentuser={currentuser}
                 setCurrentUser={setCurrentUser}
                 postTimeStamp={postTimeStamp}
-                searchFunction={getSearch}
                 allusers={users}
+                searchTerm={searchTerm}
+                handleSearch={handleSearch}
               />
             }
           />

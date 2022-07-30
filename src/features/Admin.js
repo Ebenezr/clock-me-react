@@ -12,7 +12,8 @@ const Admin = ({
   currentuser,
   setCurrentUser,
   searchFunction,
-  filterUsers,
+  searchTerm,
+  handleSearch,
 }) => {
   const renderUser = (id) => {
     const user = employees.filter((element) => {
@@ -32,7 +33,7 @@ const Admin = ({
       <article className="left">
         <Welcomeinfo />
         <Starts employees={employees} />
-        <Searchbar searchFunction={searchFunction} />
+        <Searchbar searchTerm={searchTerm} handleSearch={handleSearch} />
         <div className="users-list">
           <div className="user-title">
             <h3>Manage Employees</h3>
@@ -48,7 +49,10 @@ const Admin = ({
               <option value="hospitality">Hospitality</option>
             </select>
           </div>
-          <UserList employees={employees} renderUser={renderUser} />
+          <UserList
+            employees={employees.length > 0 ? employees : "No user available"}
+            renderUser={renderUser}
+          />
         </div>
       </article>
       <article className="right">

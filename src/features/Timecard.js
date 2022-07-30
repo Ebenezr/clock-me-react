@@ -8,8 +8,9 @@ const Timecard = ({
   employees,
   currentuser,
   setCurrentUser,
-  searchFunction,
+  searchTerm,
   postTimeStamp,
+  handleSearch,
 }) => {
   const [stamps, setStamp] = useState();
   const renderUser = (id) => {
@@ -51,7 +52,7 @@ const Timecard = ({
     <section className="timecard__view">
       <article className="left">
         <Welcomeinfo />
-        <Searchbar searchFunction={searchFunction} />
+        <Searchbar searchTerm={searchTerm} handleSearch={handleSearch} />
         <div className="users-list">
           <div className="user-title">
             <h3>Employees List</h3>
