@@ -12,7 +12,7 @@ const Timecard = ({
   postTimeStamp,
   handleSearch,
   filterUsers,
-  accName
+  accName,
 }) => {
   const [stamps, setStamp] = useState();
   const renderUser = (id) => {
@@ -32,16 +32,16 @@ const Timecard = ({
   //function clock-out and return day's timestamp
   const clockOutTime = () => {
     //chech if user acccount is selected
-    if (!(currentuser.name === "")) {
-      if (!timeIn.length < 1 || timeIn !== "" )  {
+    if (currentuser.name !== null) {
+      if (!timeIn.length < 1 || timeIn !== "") {
         timeOut = new Date().toGMTString();
         let currentstamp = `${timeIn}-${timeOut}`;
         setStamp(currentstamp);
         currentuser.timestamp.push(stamps);
         //if current stamp is empty dont..
-        if (!currentstamp.length < 1 || currentstamp !== "") {
+        if (!currentstamp === null) {
           setCurrentUser(currentuser);
-        
+
           postTimeStamp(currentuser.id, currentuser);
         }
       }
@@ -53,7 +53,7 @@ const Timecard = ({
   return (
     <section className="timecard__view">
       <article className="left">
-        <Welcomeinfo accName={accName}/>
+        <Welcomeinfo accName={accName} />
         <Searchbar searchTerm={searchTerm} handleSearch={handleSearch} />
         <div className="users-list">
           <div className="user-title">

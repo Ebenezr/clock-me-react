@@ -5,12 +5,14 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const navigate = useNavigate();
   const url = "https://db-v23.herokuapp.com/users";
+  const url_local = "http://localhost:8004/users";
+
   const [users, setUsers] = useState([]);
   const [account, setAccount] = useState({});
   const [name, setName] = useState("");
   const [loggeduser, setLoggedUser] = useState({});
   const [authenticated, setauthenticated] = useState(false);
-  // const { setAuth } = useContext(AuthContext);
+
   const userRef = useRef();
   const errRef = useRef();
   //hold user data
@@ -24,7 +26,7 @@ function Login() {
   //fetch users
   const fetchUsers = async () => {
     try {
-      await axios.get(url).then((responce) => {
+      await axios.get(url_local).then((responce) => {
         const allusers = responce.data;
         setUsers(allusers);
       });
@@ -53,21 +55,21 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const useraccount = users.find(
       (user) => user.username === formData.username
     );
     if (useraccount && useraccount.password === formData.password) {
       setauthenticated(true);
-    
+
       setAccount(useraccount);
       setLoggedUser(useraccount);
       localStorage.setItem("name", JSON.stringify(useraccount));
       localStorage.setItem("authenticated", JSON.stringify(true));
-     
+
       alert(`Logged in successful as ${useraccount.name}`);
       navigate("/home/dashboard");
-     
+
       return;
     }
     alert("Wrong Username or Password");

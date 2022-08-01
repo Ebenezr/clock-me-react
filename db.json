@@ -15,28 +15,38 @@
       "id": 2,
       "username": "mimo",
       "name": "Shilla Chemimo",
+      
       "password": "1234",
       "staffid": "IT-234",
       "department": "It",
       "avatar": "",
       "admin": false,
       "timestamp": [
-        "JuLy 23 2022 12:56 - JuLy 23 2022 12:56 ",
-        "JuLy 23 2022 12:56 - JuLy 23 2022 12:56 "
+        "Sun, 31 Jul 2022 08:15:21 GMT-Sun, 31 Jul 2022 08:15:23 GMT",
+        "Sun, 31 Jul 2022 08:15:26 GMT-Sun, 31 Jul 2022 08:15:26 GMT",
+        "Sun, 31 Jul 2022 08:15:29 GMT-Sun, 31 Jul 2022 08:15:29 GMT",
+        "Sun, 31 Jul 2022 08:15:31 GMT-Sun, 31 Jul 2022 08:15:32 GMT",
+        "Sun, 31 Jul 2022 08:15:34 GMT-Sun, 31 Jul 2022 08:15:35 GMT"
       ]
     },
     {
       "name": "Mercy M",
       "password": "123345r",
+      "user":"mercy",
       "admin": true,
       "staffid": "CM-6018",
       "department": "Support Desk",
       "avatar": "https://ebe.png",
-      "timestamp": [],
+      "timestamp": [
+        "Sun, 31 Jul 2022 08:15:37 GMT-Sun, 31 Jul 2022 08:15:38 GMT",
+        "Sun, 31 Jul 2022 08:16:15 GMT-Sun, 31 Jul 2022 08:16:16 GMT",
+        "Sun, 31 Jul 2022 08:16:17 GMT-Sun, 31 Jul 2022 08:16:18 GMT"
+      ],
       "id": 10
     },
     {
       "name": "Josua Korir",
+      "username":"josh",
       "password": "123ef",
       "admin": true,
       "staffid": "CM-5803",
@@ -49,6 +59,7 @@
       "name": "Alex Brown",
       "password": "ale3",
       "admin": true,
+      "username":"alex",
       "staffid": "CM-5048",
       "department": "Hospitality",
       "avatar": "https://ebe.png",
@@ -58,6 +69,7 @@
     {
       "name": "Osar Suf",
       "password": "sdd",
+      "username":"oscar",
       "admin": false,
       "staffid": "CM-9392",
       "department": "Support Desk",

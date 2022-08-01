@@ -10,7 +10,7 @@ import axios from "../api/axios";
 import AddNew from "../components/forms/AddNew";
 import Update from "../components/forms/Update";
 
-const Main = ({ authenticated, setAuthenticated,accName,acc }) => {
+const Main = ({ authenticated, setAuthenticated, accName, acc }) => {
   const [currentuser, setCurrentUser] = useState({
     name: "",
     username: "",
@@ -27,10 +27,11 @@ const Main = ({ authenticated, setAuthenticated,accName,acc }) => {
   const [searchTerm, setSearchTerm] = useState("");
   //local api link
   const url = "https://db-v23.herokuapp.com/users";
+  const url_local = "http://localhost:8004/users";
   //fetch users
   const fetchUsers = async () => {
     try {
-      await axios.get(url).then((responce) => {
+      await axios.get(url_local).then((responce) => {
         const allusers = responce.data;
         setUsers(allusers);
       });
@@ -45,7 +46,7 @@ const Main = ({ authenticated, setAuthenticated,accName,acc }) => {
     return users.json();
   }
   useEffect(() => {
-    setCurrentUser(acc)
+    setCurrentUser(acc);
     fetchUsers();
     getAvatar().then((data) => {
       setAvater(data.results);
@@ -69,7 +70,7 @@ const Main = ({ authenticated, setAuthenticated,accName,acc }) => {
   //post data to db
   const postData = async (formData) => {
     try {
-      await axios.post(url, formData);
+      await axios.post(url_local, formData);
       setUsers([...users, formData]);
       alert("User Added succesfully :)");
     } catch (err) {
@@ -80,7 +81,7 @@ const Main = ({ authenticated, setAuthenticated,accName,acc }) => {
   //patch timestamp to db
   const postTimeStamp = async (id, formData) => {
     try {
-      await axios.patch(`${url}/${id}`, formData);
+      await axios.patch(`${url_local}/${id}`, formData);
       setUsers([...users, formData]);
     } catch (err) {
       console.log(err);
@@ -104,28 +105,35 @@ const Main = ({ authenticated, setAuthenticated,accName,acc }) => {
   //search function
   function handleSearch(str) {
     setSearchTerm(str);
-    
+
     if (searchTerm !== "") {
-      const newList =(users.filter((user) =>Object.values(user).join(" ").toLowerCase().includes(searchTerm.toLowerCase())))
+      const newList = users.filter((user) =>
+        Object.values(user)
+          .join(" ")
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase())
+      );
       setSearchResult(newList);
-      
+
       return searchResult;
-      
     }
     setSearchResult(users);
-  
   }
- 
+
   //filter function
   function filterUsers(str) {
     setSearchTerm(str);
-   
+
     if (searchTerm !== "all") {
-      const newList =(users.filter((user) =>Object.values(user).join(" ").toLowerCase().includes(searchTerm.toLowerCase())))
+      const newList = users.filter((user) =>
+        Object.values(user)
+          .join(" ")
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase())
+      );
       setSearchResult(newList);
-      
+
       return searchResult;
-      
     }
     setSearchResult(users);
   }
