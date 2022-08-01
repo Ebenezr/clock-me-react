@@ -11,6 +11,10 @@
 Clock-me: is is a web application used to keep track of employees and thier clock-in and clock out time and also calculates their salary based on total clocked time.
 
 ---
+## Project Blog
+
+`https://medium.com/@ebenezarbukosia/clock-me-web-application-react-9d425b5aa8ee`
+---
 
 ## SCREENSHOTS
 
