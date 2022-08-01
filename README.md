@@ -13,7 +13,7 @@ Clock-me: is is a web application used to keep track of employees and thier cloc
 ---
 ## Project Blog
 
-`https://medium.com/@ebenezarbukosia/clock-me-web-application-react-9d425b5aa8ee`
+https://medium.com/@ebenezarbukosia/clock-me-web-application-react-9d425b5aa8ee
 ---
 
 ## SCREENSHOTS
