@@ -26,9 +26,10 @@ function Login() {
   //fetch users
   const fetchUsers = async () => {
     try {
-      await axios.get(url_local).then((responce) => {
+      await axios.get(url).then((responce) => {
         const allusers = responce.data;
         setUsers(allusers);
+        console.log(allusers);
       });
     } catch (err) {
       console.log(err);
@@ -64,9 +65,10 @@ function Login() {
 
       setAccount(useraccount);
       setLoggedUser(useraccount);
+
       localStorage.setItem("name", JSON.stringify(useraccount));
       localStorage.setItem("authenticated", JSON.stringify(true));
-
+      console.log(formData);
       alert(`Logged in successful as ${useraccount.name}`);
       navigate("/home/dashboard");
 

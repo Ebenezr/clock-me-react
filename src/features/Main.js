@@ -26,8 +26,8 @@ const Main = ({ authenticated, setAuthenticated, accName, acc }) => {
   const [searchResult, setSearchResult] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   //local api link
-  const url = "https://db-v23.herokuapp.com/users";
-  const url_local = "http://localhost:8004/users";
+  const url_local = "https://db-v23.herokuapp.com/users";
+  //const url_local = "http://localhost:8004/users";
   //fetch users
   const fetchUsers = async () => {
     try {
@@ -58,7 +58,7 @@ const Main = ({ authenticated, setAuthenticated, accName, acc }) => {
     try {
       let deluser = users.filter((user) => user.id !== id);
       setUsers(deluser);
-      await axios.delete(`${url}/${id}`);
+      await axios.delete(`${url_local}/${id}`);
       setCurrentUser("");
       alert("User Deleted succesfully :)");
     } catch (err) {
@@ -92,7 +92,7 @@ const Main = ({ authenticated, setAuthenticated, accName, acc }) => {
   //update user details request
   const updateUser = async (id, formData) => {
     try {
-      await axios.patch(`${url}/${id}`, formData);
+      await axios.patch(`${url_local}/${id}`, formData);
       setUsers(users);
       alert("User Updated succesfully :)");
     } catch (err) {
