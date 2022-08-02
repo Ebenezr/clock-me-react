@@ -39,9 +39,8 @@ const Timecard = ({
         setStamp(currentstamp);
         currentuser.timestamp.push(stamps);
         //if current stamp is empty dont..
-        if (!currentstamp === null) {
+        if (stamps !== null) {
           setCurrentUser(currentuser);
-
           postTimeStamp(currentuser.id, currentuser);
         }
       }

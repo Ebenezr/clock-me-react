@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const navigate = useNavigate();
   const url = "https://db-v23.herokuapp.com/users";
-  const url_local = "http://localhost:8004/users";
+  //const url_local = "http://localhost:8004/users";
 
   const [users, setUsers] = useState([]);
   const [account, setAccount] = useState({});
