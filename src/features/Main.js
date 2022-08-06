@@ -185,6 +185,11 @@ const Main = ({ authenticated, setAuthenticated, accName, acc }) => {
             />
             <Route
               exact
+              path="/admin/"
+              element={<AddNew postData={postData} />}
+            />
+            <Route
+              exact
               path="update"
               element={
                 <Update
