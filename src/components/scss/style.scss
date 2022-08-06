@@ -136,3 +136,7 @@ b{
  }
   
 }
+.required:after{
+  content:" *";
+  color:red;
+}

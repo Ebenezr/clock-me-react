@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useId } from "react";
 import Userinfo from "../components/cards/Userinfo";
 import UserList from "../components/cards/UserList";
 import Welcomeinfo from "../components/cards/Welcomeinfo";
@@ -14,6 +14,7 @@ const Timecard = ({
   filterUsers,
   accName,
 }) => {
+  const id = useId();
   const [stamps, setStamp] = useState();
   const renderUser = (id) => {
     const user = employees.filter((element) => {
@@ -85,8 +86,8 @@ const Timecard = ({
         <div className="forms-container">
           <h3>My Timestamps</h3>
           <div className="timestamp-container">
-            {currentuser.timestamp.map((times, index) => (
-              <span key={index}>{times}</span>
+            {currentuser.timestamp.map((times) => (
+              <span key={`${id}-stamps`}>{times}</span>
             ))}
           </div>
         </div>

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  useNavigate,
-} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Aside from "./components/nav/Aside";
 import Main from "./features/Main";
 
@@ -16,7 +14,7 @@ const App = () => {
   });
   const navigate = useNavigate();
   //protect app component
-  const [authenticated, setauthenticated] = useState(()=>{
+  const [authenticated, setauthenticated] = useState(() => {
     // getting stored value
     const saved = localStorage.getItem("authenticated");
     const initialValue = JSON.parse(saved);
@@ -24,29 +22,29 @@ const App = () => {
   });
 
   useEffect(() => {
-    if (authenticated) {   
+    if (authenticated) {
       setauthenticated(authenticated);
-    }else{
+    } else {
       navigate("/");
       // Redirect if not loggedin
     }
   }, []);
-  if(!authenticated){
+  if (!authenticated) {
     navigate("/");
   }
- 
-    return (
-      <main className="App">
-        <Aside accName={name.name} admin={name.admin} />
-        <Main
+
+  return (
+    <main className="App">
+      <Aside accName={name.name} admin={name.admin} accImg={name.avatar} />
+      <Main
         acc={name}
         accImg={name.avatar}
         accName={name.name}
-          authenticated={authenticated}
-          setAuthenticated={setauthenticated}
-        />
-      </main>
-    );
-  }
+        authenticated={authenticated}
+        setAuthenticated={setauthenticated}
+      />
+    </main>
+  );
+};
 
 export default App;

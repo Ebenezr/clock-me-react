@@ -11,8 +11,7 @@ import {
 import { IoTimer } from "react-icons/io5";
 import { BsMoonFill } from "react-icons/bs";
 
-
-const Aside = ({accName,admin,accImg}) => {
+const Aside = ({ accName, admin, accImg }) => {
   return (
     <aside>
       <div className="top">
@@ -82,13 +81,13 @@ const Aside = ({accName,admin,accImg}) => {
       <div className="aside__footer">
         <div className="profile">
           <div className="profile-photo">
-            <img src={accImg} />
+            <img src={accImg} alt="Img" />
           </div>
           <div className="info">
             <p>
               <b>{accName}</b>
             </p>
-            <small className="text-muted">{admin?'Admin':'User'}</small>
+            <small className="text-muted">{admin ? "Admin" : "User"}</small>
           </div>
         </div>
       </div>
