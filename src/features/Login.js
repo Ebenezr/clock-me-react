@@ -8,10 +8,9 @@ function Login() {
   //const url_local = "http://localhost:8004/users";
 
   const [users, setUsers] = useState([]);
-  const [account, setAccount] = useState({});
-  const [name, setName] = useState("");
-  const [loggeduser, setLoggedUser] = useState({});
-  const [authenticated, setauthenticated] = useState(false);
+  const [setAccount] = useState({});
+  const [setLoggedUser] = useState({});
+  const [setauthenticated] = useState(false);
 
   const userRef = useRef();
   const errRef = useRef();
@@ -22,17 +21,15 @@ function Login() {
     rememberMe: true,
   });
   const [errMsg, setErrMsg] = useState("");
-  const [succes, setSuccess] = useState(false);
   //fetch users
   const fetchUsers = async () => {
     try {
       await axios.get(url).then((responce) => {
         const allusers = responce.data;
         setUsers(allusers);
-        console.log(allusers);
       });
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
   useEffect(() => {
@@ -68,7 +65,6 @@ function Login() {
 
       localStorage.setItem("name", JSON.stringify(useraccount));
       localStorage.setItem("authenticated", JSON.stringify(true));
-      console.log(formData);
       alert(`Logged in successful as ${useraccount.name}`);
       navigate("/home/dashboard");
 
